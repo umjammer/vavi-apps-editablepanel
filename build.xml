@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="Shift_JIS"?>
+
+<!-- ////////////////////////////////////////////////////////////////////// -->
+<!-- Copyright (c) 2002 by Naohide Sano, All rights reserved.               -->
+<!--                                                                        -->
+<!-- Written by Naohide Sano                                                -->
+<!--                                                                        -->
+<!-- vavi.apps.editablePanel                                                -->
+<!--                                                                        -->
+<!-- @author	Naohide Sano                                                -->
+<!-- @version	0.00	020522	nsano	initial version                     -->
+<!--                                                                        -->
+<!-- ////////////////////////////////////////////////////////////////////// -->
+
+<project default="run" basedir=".">
+
+  <!-- クラスパスの定義 -->
+  <path id="project.class.path">
+    <pathelement location="../../.." />
+    <pathelement location="${java.home}/../lib/dt.jar" />
+    <fileset dir="${java.home}/lib/ext/">
+      <include name="*.jar" />
+    </fileset>
+    <fileset dir="../../../../lib">
+      <include name="*.jar" />
+    </fileset>
+  </path>
+
+  <!-- ターゲットの定義 -->
+
+  <!-- clean -->
+  <target name="clean" description="ビルド環境のクリア">
+    <delete>
+      <fileset dir=".">
+        <include name="**/*.class" />
+      </fileset>
+    </delete>
+  </target>
+
+  <!-- resource -->
+  <target name="resource" description="リソース生成">
+  <echo message="${java.home}" />
+    <delete file="EditablePanelResource_ja.properties" />
+    <exec executable="native2ascii">
+      <arg value="-encoding" />
+      <arg value="SJIS" />
+      <arg value="ja.properties" />
+      <arg value="EditablePanelResource_ja.properties" />
+    </exec>
+  </target>
+
+  <!-- javac vavi.awt all -->
+  <target name="compile.vavi.awt"
+          description="コンパイル vavi.awt">
+    <ant dir="../../../vavi/awt" target="compile.all" />
+  </target>
+
+  <!-- javac vavi.swing all -->
+  <target name="compile.vavi.swing"
+          description="コンパイル vavi.swing">
+    <ant dir="../../../vavi/swing" target="compile.all" />
+  </target>
+
+  <!-- javac vavi.util -->
+  <target name="compile.vavi.util"
+          description="コンパイル vavi.util">
+    <ant dir="../../../vavi/util" target="compile.all" />
+  </target>
+
+  <!-- javac -->
+  <target name="compile" depends="resource,
+                                  compile.vavi.util,
+                                  compile.vavi.awt,
+                                  compile.vavi.swing"
+    description="コンパイル">
+    <javac debug="on">
+      <classpath refid="project.class.path" />
+      <include name="*.java" />
+      <include name="beans/*.java" />
+      <src path="." />
+    </javac>
+  </target>
+
+  <!-- run -->
+  <target name="run" depends="compile" description="Executes the Program">
+    <java classname="vavi.apps.editablePanel.EditablePanel" fork="yes">
+      <jvmarg value="-Duser.home=c:/home/nsano" />
+      <classpath refid="project.class.path"/>
+    </java>
+  </target>
+
+  <!-- ctf -->
+  <target name="ctf" depends="compile" description="Test component tree frame">
+    <java classname="vavi.apps.editablePanel.ComponentTreeFrame" fork="yes">
+      <classpath refid="project.class.path"/>
+    </java>
+  </target>
+
+</project>
+
+<!-- -->

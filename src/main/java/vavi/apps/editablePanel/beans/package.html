@@ -1,0 +1,40 @@
+<html>
+<!--
+Copyright (c) 2000 by Oracle Corporation Japan, All rights reserved.
+
+Written by Naohide Sano
+
+@author	<a href=mailto:nsano@jp.oracle.com>Naohide Sano</a> (nsano)
+
+@version	0.00	000306	nsano	initial version
+-->
+<body>
+編集可能パネル{@link vavi.apps.editablePanel.EditablePanel}で使用されるコンポーネントのクラスを提供します．
+<p>
+まだコントローラを java beans 化してないので仕様は決定ではありません．
+とりあえず新規コンポーネントを作成する際は，
+
+<ol>
+<li>{@link java.awt.Component}(なるべく{@link javax.swing.JComponent}のほうが望ましい)を継承したコンポーネントを作成する．
+<li>そのコンポーネントに対するコントローラを，{@link vavi.apps.editablePanel.Controller}を継承して作成する．
+<li>そのコンポーネントのプロパティエディタを，{@link vavi.apps.editablePanel.Controller}を <code>implemants</code> して作成する．
+<li>vavi/apps/editablePanel/EditablePanel.properties に作成したコントローラを記述しておく．
+<pre><tt>
+ep.palette.<font color=green>X</font>.title=<font color=blue>your palette title</font>
+ep.palette.<font color=green>X</font>.<font color=red>0</font>=<font color=blue>your.package.yourComponent1</font>
+ep.palette.<font color=green>X</font>.<font color=red>1</font>=<font color=blue>your.package.yourComponent2</font>
+ :
+</tt>
+</pre>
+<table>
+<tr><td><font color=green>X</font></td><td>あなたのコンポーネントを置くパレットのタイトル</td></tr>
+<tr><td><font color=red>2</font></td><td>コンポーネントの順番 (0から7まで)</td></tr>
+<tr><td><font color=blue>your.package.yourComponent#</font></td><td>パレットの番号 (0と1はシステムで予約なので2から)</td></tr>
+</table>
+<li>
+<li>
+<li>
+</ol>
+
+</body>
+</html>
