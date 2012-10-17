@@ -31,7 +31,7 @@ import vavi.swing.propertyeditor.JPropertyEditorPanel;
 
 
 /**
- * ƒvƒƒpƒeƒBƒGƒfƒBƒ^‚ÌƒtƒŒ[ƒ€‚Å‚·D
+ * ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã§ã™ï¼
  * 
  * @depends ./EditablePanelResource${I18N}.properties
  * 
@@ -41,17 +41,17 @@ import vavi.swing.propertyeditor.JPropertyEditorPanel;
  */
 public class PropertyEditorFrame extends JFrame {
 
-    /** ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ */
+    /** ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ« */
     private static final ResourceBundle rb = ResourceBundle.getBundle("vavi.apps.editablePanel.EditablePanelResource", Locale.getDefault());
 
-    /** ƒvƒƒpƒeƒBƒGƒfƒBƒ^ */
+    /** ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ */
     private JPropertyEditorPanel propertyEditorPanel;
 
     /** */
     private EventPlugSupport eps = new EventPlugSupport();
 
     /**
-     * ƒvƒƒpƒeƒBƒGƒfƒBƒ^‚ÌƒtƒŒ[ƒ€‚ğ\’z‚µ‚Ü‚·D
+     * ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public PropertyEditorFrame() {
 
@@ -74,7 +74,7 @@ public class PropertyEditorFrame extends JFrame {
     }
 
     /**
-     * ƒvƒƒpƒeƒBƒGƒfƒBƒ^‚ÌƒtƒŒ[ƒ€‚ğ‰Šú‰»‚µ‚Ü‚·D
+     * ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’åˆæœŸåŒ–ã—ã¾ã™ï¼
      */
     private WindowListener wl = new WindowAdapter() {
         public void windowOpened(WindowEvent ev) {

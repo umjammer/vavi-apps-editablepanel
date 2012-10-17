@@ -75,7 +75,7 @@ import vavi.util.RegexFileFilter;
 
 
 /**
- * ‚ÌƒƒCƒ“ƒ‚ƒWƒ…[ƒ‹‚Å‚·D
+ * ã®ãƒ¡ã‚¤ãƒ³ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ã§ã™ï¼
  * 
  * @depends ${JDK_HOME}/lib/dt.jar
  * @depends ./EditablePanelResource${I18N}.properties
@@ -88,26 +88,26 @@ import vavi.util.RegexFileFilter;
  */
 public class EditablePanel extends JComponent {
 
-    /** ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ */
+    /** ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ« */
     private static final ResourceBundle rb = ResourceBundle.getBundle("vavi.apps.editablePanel.EditablePanelResource", Locale.getDefault());
 
-    /** ƒRƒ“ƒeƒiƒGƒfƒBƒ^ */
+    /** ã‚³ãƒ³ãƒ†ãƒŠã‚¨ãƒ‡ã‚£ã‚¿ */
     private ContainerEditor containerEditor;
 
-    /** ƒRƒ“ƒeƒi */
+    /** ã‚³ãƒ³ãƒ†ãƒŠ */
     private Container container;
 
-    /** ƒƒjƒ…[ƒtƒŒ[ƒ€ */
+    /** ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒ•ãƒ¬ãƒ¼ãƒ  */
     private MenuFrame menuFrame;
 
-    /** ƒcƒŠ[ƒrƒ…[ */
+    /** ãƒ„ãƒªãƒ¼ãƒ“ãƒ¥ãƒ¼ */
     private ComponentTreeFrame componentTreeFrame;
 
-    /** ƒvƒƒpƒeƒBƒV[ƒg */
+    /** ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚·ãƒ¼ãƒˆ */
     private PropertyEditorFrame propertyEditorFrame;
 
     /**
-     * •ÒW‰Â”\ƒpƒlƒ‹‚ğ\’z‚µ‚Ü‚·D
+     * ç·¨é›†å¯èƒ½ãƒ‘ãƒãƒ«ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public EditablePanel() {
 
@@ -172,7 +172,7 @@ public class EditablePanel extends JComponent {
 
         JDialog dialog = new JDialog(frame, title, false);
 
-        // Àsƒ‚[ƒh‚ÌÛ‚ÍƒtƒŒ[ƒ€‚ÌƒTƒCƒY‚ğ•ÏX‚Å‚«‚È‚¢‚æ‚¤‚É‚·‚é
+        // å®Ÿè¡Œãƒ¢ãƒ¼ãƒ‰ã®éš›ã¯ãƒ•ãƒ¬ãƒ¼ãƒ ã®ã‚µã‚¤ã‚ºã‚’å¤‰æ›´ã§ããªã„ã‚ˆã†ã«ã™ã‚‹
         dialog.setResizable(containerEditor.isEditable());
 
         Container contentPane = dialog.getContentPane();
@@ -183,7 +183,7 @@ public class EditablePanel extends JComponent {
     }
 
     /**
-     * ƒ_ƒCƒAƒƒO‚Æ‚µ‚Ä•ÒW‰Â”\ƒpƒlƒ‹‚ğ•\¦‚µ‚Ü‚·D
+     * ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã¨ã—ã¦ç·¨é›†å¯èƒ½ãƒ‘ãƒãƒ«ã‚’è¡¨ç¤ºã—ã¾ã™ï¼
      */
     public void showDialog(Component parent) throws HeadlessException {
 
@@ -208,7 +208,7 @@ public class EditablePanel extends JComponent {
     // -------------------------------------------------------------------------
 
     /**
-     * •Â‚¶‚Ü‚·D
+     * é–‰ã˜ã¾ã™ï¼
      */
     private void close() {
         dialog.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -236,11 +236,11 @@ public class EditablePanel extends JComponent {
 
     // -------------------------------------------------------------------------
 
-    /** —pˆÓ‚³‚ê‚½ Component */
+    /** ç”¨æ„ã•ã‚ŒãŸ Component */
     private Component preparedComponent;
 
     /**
-     * €”õ‚³‚ê‚½ Component‚ğ•\¦‚µ‚Ü‚·D
+     * æº–å‚™ã•ã‚ŒãŸ Componentã‚’è¡¨ç¤ºã—ã¾ã™ï¼
      * 
      * @see #mil
      */
@@ -258,7 +258,7 @@ Debug.println(getClassName(preparedComponent));
     }
 
     /**
-     * Component‚ğ•\¦‚·‚é€”õ‚ğ‚µ‚Ü‚·D
+     * Componentã‚’è¡¨ç¤ºã™ã‚‹æº–å‚™ã‚’ã—ã¾ã™ï¼
      * 
      * @see #cancelToAdd()
      */
@@ -282,7 +282,7 @@ Debug.println(Level.SEVERE, e);
     }
 
     /**
-     * €”õ‚³‚ê‚½ Component ‚ğ”jŠü‚µ‚Ü‚·D
+     * æº–å‚™ã•ã‚ŒãŸ Component ã‚’ç ´æ£„ã—ã¾ã™ï¼
      * 
      * @see #preparedComponent
      */
@@ -295,7 +295,7 @@ Debug.println(Level.SEVERE, e);
     }
 
     /**
-     * ƒ†ƒj[ƒN‚È–¼‘O‚ğ•Ô‚µ‚Ü‚·D
+     * ãƒ¦ãƒ‹ãƒ¼ã‚¯ãªåå‰ã‚’è¿”ã—ã¾ã™ï¼
      */
     private String getNewName(String baseName) {
         List<String> names = new ArrayList<String>();
@@ -396,7 +396,7 @@ Debug.println(Level.SEVERE, e);
         alignJustifyVerticalGapAction.setEnabled(flag);
     }
 
-    /** ComponentTreeFrame —p‚Ì EditorListener */
+    /** ComponentTreeFrame ç”¨ã® EditorListener */
     private EditorListener ctel = new EditorListener() {
         public void editorUpdated(EditorEvent ev) {
             String name = ev.getName();
@@ -420,7 +420,7 @@ Debug.println(Level.SEVERE, e);
 
     // -------------------------------------------------------------------------
 
-    /** containerEditor —p‚Ì MouseInputListener */
+    /** containerEditor ç”¨ã® MouseInputListener */
     private MouseInputListener mil = new MouseInputAdapter() {
         private Cursor dropCursor;
         {
@@ -440,7 +440,7 @@ Debug.println(Level.SEVERE, e);
             }
         }
 
-        /** Component ’Ç‰ÁD */
+        /** Component è¿½åŠ ï¼ */
         public void mouseReleased(MouseEvent ev) {
             if (preparedComponent != null) {
                 finishToAdd(ev.getPoint());
@@ -488,32 +488,32 @@ Debug.println("----------------");
 
     // -------------------------------------------------------------------------
 
-    /** ƒtƒ@ƒCƒ‹ƒƒjƒ…[ */
+    /** ãƒ•ã‚¡ã‚¤ãƒ«ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
     private JMenu fileMenu;
 
-    /** •ÒWƒƒjƒ…[ */
+    /** ç·¨é›†ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
     private JMenu editMenu;
 
-    /** ƒ‚[ƒhƒƒjƒ…[ */
+    /** ãƒ¢ãƒ¼ãƒ‰ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
     private JMenu modeMenu;
 
-    /** ”z’uƒƒjƒ…[ */
+    /** é…ç½®ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
     private JMenu alignMenu;
 
-    /** ƒwƒ‹ƒvƒƒjƒ…[ */
+    /** ãƒ˜ãƒ«ãƒ—ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
     private JMenu helpMenu;
 
     /** */
     private JCheckBoxMenuItem modeMenuItem;
 
     /**
-     * ƒƒjƒ…[ƒo[‚ğì¬‚µ‚Ü‚·D
+     * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ãƒãƒ¼ã‚’ä½œæˆã—ã¾ã™ï¼
      */
     private JMenuBar createMenuBar() {
 
         JMenuBar menuBar = new JMenuBar();
 
-        // ƒtƒ@ƒCƒ‹
+        // ãƒ•ã‚¡ã‚¤ãƒ«
 
         fileMenu = new JMenu(rb.getString("menu.file"));
         fileMenu.setEnabled(false);
@@ -526,7 +526,7 @@ Debug.println("----------------");
 
         menuBar.add(fileMenu);
 
-        // •ÒW
+        // ç·¨é›†
 
         editMenu = new JMenu(rb.getString("menu.edit"));
         editMenu.setEnabled(false);
@@ -540,7 +540,7 @@ Debug.println("----------------");
 
         menuBar.add(editMenu);
 
-        // ”z’u
+        // é…ç½®
 
         alignMenu = new JMenu(rb.getString("menu.align"));
         alignMenu.setEnabled(false);
@@ -561,7 +561,7 @@ Debug.println("----------------");
 
         menuBar.add(alignMenu);
 
-        // ƒ‚[ƒh
+        // ãƒ¢ãƒ¼ãƒ‰
 
         modeMenu = new JMenu(rb.getString("menu.mode"));
 
@@ -571,7 +571,7 @@ Debug.println("----------------");
 
         menuBar.add(modeMenu);
 
-        // ƒwƒ‹ƒv
+        // ãƒ˜ãƒ«ãƒ—
 
         helpMenu = new JMenu(rb.getString("menu.help"));
 
@@ -585,14 +585,14 @@ Debug.println("----------------");
     }
 
     /**
-     * ƒc[ƒ‹ƒo[‚ğì¬‚µ‚Ü‚·D
+     * ãƒ„ãƒ¼ãƒ«ãƒãƒ¼ã‚’ä½œæˆã—ã¾ã™ï¼
      */
     private JToolBar createToolBar() {
 
         JToolBar toolBar = new JToolBar();
         toolBar.setFloatable(false);
 
-        // •ÒW
+        // ç·¨é›†
 
         JButton button = toolBar.add(cutAction);
         // Object[]o=((AbstractAction) cutAction).getKeys();
@@ -616,7 +616,7 @@ Debug.println("----------------");
     /** */
     private static final RegexFileFilter fileFilter = new RegexFileFilter(".+\\.xml", "XML File");
 
-    /** ƒtƒ@ƒCƒ‹‚ğŠJ‚­ƒƒjƒ…[ */
+    /** ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ããƒ¡ãƒ‹ãƒ¥ãƒ¼ */
     private Action openAction = new AbstractAction(rb.getString("action.open"), (ImageIcon) UIManager.get("editablePanel.openIcon")) {
         private JFileChooser fc = new JFileChooser();
         {
@@ -643,7 +643,7 @@ Debug.printStackTrace(e);
         }
     };
 
-    /** ‰æ–Êî•ñ‚ğ•Û‘¶‚·‚éƒƒjƒ…[ */
+    /** ç”»é¢æƒ…å ±ã‚’ä¿å­˜ã™ã‚‹ãƒ¡ãƒ‹ãƒ¥ãƒ¼ */
     private Action saveAction = new AbstractAction(rb.getString("action.save"), (ImageIcon) UIManager.get("editablePanel.saveIcon")) {
         {
             setEnabled(false);
@@ -664,7 +664,7 @@ Debug.printStackTrace(e);
         }
     };
 
-    /** –¼‘O‚ğ‚Â‚¯‚Ä•Û‘¶‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** åå‰ã‚’ã¤ã‘ã¦ä¿å­˜ã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action saveAsAction = new AbstractAction(rb.getString("action.saveAs"), (ImageIcon) UIManager.get("editablePanel.saveAsIcon")) {
         private JFileChooser fc = new JFileChooser();
         {
@@ -715,7 +715,7 @@ Debug.println("save: " + file);
         xe.close();
     }
 
-    /** I—¹‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** çµ‚äº†ã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action exitAction = new AbstractAction(rb.getString("action.exit")) {
         public void actionPerformed(ActionEvent ev) {
             close();
@@ -727,7 +727,7 @@ Debug.println("save: " + file);
 
     /** */
     private Action changeModeAction = new AbstractAction(rb.getString("menuItem.mode")) {
-        /** ƒ‚[ƒh‚ÌØ‚è‘Ö‚¦ƒƒjƒ…[‚Ìˆ— */
+        /** ãƒ¢ãƒ¼ãƒ‰ã®åˆ‡ã‚Šæ›¿ãˆãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®å‡¦ç† */
         public void actionPerformed(ActionEvent ev) {
             boolean isEditable = modeMenuItem.getState();
             setEditable(isEditable);
@@ -736,7 +736,7 @@ Debug.println("save: " + file);
 
     // -------------------------------------------------------------------------
 
-    /** ‚·‚×‚Ä‘I‘ğ‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** ã™ã¹ã¦é¸æŠã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action selectAllAction = new AbstractAction(rb.getString("action.selectAll")) {
         public void actionPerformed(ActionEvent ev) {
             containerEditor.selectAll();
@@ -745,21 +745,21 @@ Debug.println("save: " + file);
 
     // -------------------------------------------------------------------------
 
-    /** ƒJƒbƒg‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** ã‚«ãƒƒãƒˆã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action cutAction = new AbstractAction(rb.getString("action.cut"), (ImageIcon) UIManager.get("editablePanel.cutIcon")) {
         public void actionPerformed(ActionEvent ev) {
             containerEditor.cut();
         }
     };
 
-    /** ƒRƒs[‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** ã‚³ãƒ”ãƒ¼ã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action copyAction = new AbstractAction(rb.getString("action.copy"), (ImageIcon) UIManager.get("editablePanel.copyIcon")) {
         public void actionPerformed(ActionEvent ev) {
             containerEditor.copy();
         }
     };
 
-    /** “\‚è•t‚¯‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** è²¼ã‚Šä»˜ã‘ã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action pasteAction = new AbstractAction(rb.getString("action.paste"), (ImageIcon) UIManager.get("editablePanel.pasteIcon")) {
         {
             setEnabled(false);
@@ -770,14 +770,14 @@ Debug.println("save: " + file);
         }
     };
 
-    /** íœ‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** å‰Šé™¤ã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action deleteAction = new AbstractAction(rb.getString("action.delete"), (ImageIcon) UIManager.get("editablePanel.deleteIcon")) {
         public void actionPerformed(ActionEvent ev) {
             containerEditor.delete();
         }
     };
 
-    /** ã‚É‚»‚ë‚¦‚éƒAƒNƒVƒ‡ƒ“ */
+    /** ä¸Šã«ãã‚ãˆã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action alignTopAction = new AbstractAction(rb.getString("action.alignTop"), (ImageIcon) UIManager.get("editablePanel.alignTopIcon")) {
         {
             setEnabled(false);
@@ -788,7 +788,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** ‰º‚É‚»‚ë‚¦‚éƒAƒNƒVƒ‡ƒ“ */
+    /** ä¸‹ã«ãã‚ãˆã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action alignBottomAction = new AbstractAction(rb.getString("action.alignBottom"), (ImageIcon) UIManager.get("editablePanel.alignBottomIcon")) {
         {
             setEnabled(false);
@@ -799,7 +799,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** ¶‚É‚»‚ë‚¦‚éƒAƒNƒVƒ‡ƒ“ */
+    /** å·¦ã«ãã‚ãˆã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action alignLeftAction = new AbstractAction(rb.getString("action.alignLeft"), (ImageIcon) UIManager.get("editablePanel.alignLeftIcon")) {
         {
             setEnabled(false);
@@ -810,7 +810,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** ‰E‚É‚»‚ë‚¦‚éƒAƒNƒVƒ‡ƒ“ */
+    /** å³ã«ãã‚ãˆã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action alignRightAction = new AbstractAction(rb.getString("action.alignRight"), (ImageIcon) UIManager.get("editablePanel.alignRightIcon")) {
         {
             setEnabled(false);
@@ -821,7 +821,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** •‚ğ‚»‚ë‚¦‚éƒAƒNƒVƒ‡ƒ“ */
+    /** å¹…ã‚’ãã‚ãˆã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action alignJustifyHorizontalAction = new AbstractAction(rb.getString("action.alignJustifyHorizontal"), (ImageIcon) UIManager.get("editablePanel.alignJustifyHorizontalIcon")) {
         {
             setEnabled(false);
@@ -832,7 +832,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** ‚‚³‚ğ‚»‚ë‚¦‚éƒAƒNƒVƒ‡ƒ“ */
+    /** é«˜ã•ã‚’ãã‚ãˆã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action alignJustifyVerticalAction = new AbstractAction(rb.getString("action.alignJustifyVertical"), (ImageIcon) UIManager.get("editablePanel.alignJustifyVerticalIcon")) {
         {
             setEnabled(false);
@@ -843,7 +843,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** …•½ŠÔŠu‚ğ‹Ï“™‚É‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** æ°´å¹³é–“éš”ã‚’å‡ç­‰ã«ã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action alignJustifyHorizontalGapAction = new AbstractAction(rb.getString("action.alignJustifyHorizontalGap")) {
         {
             setEnabled(false);
@@ -854,7 +854,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** ‚’¼ŠÔŠu‚ğ‹Ï“™‚É‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** å‚ç›´é–“éš”ã‚’å‡ç­‰ã«ã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action alignJustifyVerticalGapAction = new AbstractAction(rb.getString("action.alignJustifyVerticalGap")) {
         {
             setEnabled(false);
@@ -865,7 +865,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** Å‘O–Ê‚É”z’u‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** æœ€å‰é¢ã«é…ç½®ã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action toFrontAction = new AbstractAction(rb.getString("action.toFront")) {
         {
             setEnabled(false);
@@ -876,7 +876,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** Å”w–Ê‚É”z’u‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** æœ€èƒŒé¢ã«é…ç½®ã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action toBackAction = new AbstractAction(rb.getString("action.toBack")) {
         {
             setEnabled(false);
@@ -889,7 +889,7 @@ Debug.println("save: " + file);
 
     // -------------------------------------------------------------------------
 
-    /** ƒ}ƒjƒ…ƒAƒ‹‚ğ•\¦‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** ãƒãƒ‹ãƒ¥ã‚¢ãƒ«ã‚’è¡¨ç¤ºã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action showManualAction = new AbstractAction(rb.getString("action.showManual"), (ImageIcon) UIManager.get("editablePanel.showManualIcon")) {
         public void actionPerformed(ActionEvent ev) {
             try {
@@ -900,7 +900,7 @@ Debug.println("save: " + file);
         }
     };
 
-    /** ƒo[ƒWƒ‡ƒ“î•ñ‚ğ•\¦‚·‚éƒAƒNƒVƒ‡ƒ“ */
+    /** ãƒãƒ¼ã‚¸ãƒ§ãƒ³æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ */
     private Action showVersionAction = new AbstractAction(rb.getString("action.showVersion"), (ImageIcon) UIManager.get("editablePanel.showVersionIcon")) {
         public void actionPerformed(ActionEvent ev) {
             JOptionPane.showMessageDialog(null, rb.getString("version.title") + "\n" + rb.getString("version.revision") + "\n" + rb.getString("version.build") + "\n" + rb.getString("version.copyright"), rb.getString("dialog.title.showVersion"), JOptionPane.INFORMATION_MESSAGE);
@@ -929,11 +929,11 @@ Debug.println("save: " + file);
 
     // -------------------------------------------------------------------------
 
-    /** ƒvƒƒpƒeƒB */
+    /** ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ */
     private static Properties props = new Properties();
 
     /**
-     * ‰Šú‰»‚µ‚Ü‚·D
+     * åˆæœŸåŒ–ã—ã¾ã™ï¼
      */
     static {
         try {

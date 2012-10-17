@@ -21,7 +21,7 @@ import vavi.swing.JFileChooserTextField;
 
 
 /**
- * {@link vavi.apps.editablePanel.beans.HelpButton} ‚ÌƒJƒXƒ^ƒ}ƒCƒU‚Å‚·D
+ * {@link vavi.apps.editablePanel.beans.HelpButton} ã®ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚¶ã§ã™ï¼
  * <p>
  * TODO JFileChooserURLTextField
  * </p>
@@ -30,16 +30,16 @@ import vavi.swing.JFileChooserTextField;
  */
 public class HelpButtonCustomizer extends JComponent implements Customizer {
 
-    /** ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ */
+    /** ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ« */
     private static final ResourceBundle rb = ResourceBundle.getBundle("vavi.swing.resource", Locale.getDefault());
 
-    /** •ÒW‘ÎÛ */
+    /** ç·¨é›†å¯¾è±¡ */
     private HelpButton helpButton;
 
-    /** ƒwƒ‹ƒv‚Ìƒtƒ@ƒCƒ‹ƒ`ƒ…[ƒU */
+    /** ãƒ˜ãƒ«ãƒ—ã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒ¥ãƒ¼ã‚¶ */
     private JFileChooserTextField helpChooser = new JFileChooserTextField();
 
-    /** ƒwƒ‹ƒvƒ{ƒ^ƒ“‚ÌƒvƒƒpƒeƒBƒGƒfƒBƒ^ */
+    /** ãƒ˜ãƒ«ãƒ—ãƒœã‚¿ãƒ³ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ */
     public HelpButtonCustomizer() {
 
         this.setLayout(new BorderLayout());
@@ -51,7 +51,7 @@ public class HelpButtonCustomizer extends JComponent implements Customizer {
         helpChooser.addPropertyChangeListener(pcl);
     }
 
-    /** ƒtƒ@ƒCƒ‹ƒ`ƒ…[ƒU‚ÌƒŠƒXƒi */
+    /** ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒ¥ãƒ¼ã‚¶ã®ãƒªã‚¹ãƒŠ */
     private PropertyChangeListener pcl = new PropertyChangeListener() {
         public void propertyChange(PropertyChangeEvent ev) {
             String name = ev.getPropertyName();
@@ -64,7 +64,7 @@ public class HelpButtonCustomizer extends JComponent implements Customizer {
     };
 
     /**
-     * •ÒW‘ÎÛ‚ğİ’è‚µ‚Ü‚·D
+     * ç·¨é›†å¯¾è±¡ã‚’è¨­å®šã—ã¾ã™ï¼
      */
     public void setObject(Object object) {
         helpButton = (HelpButton) object;

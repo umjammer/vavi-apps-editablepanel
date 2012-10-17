@@ -21,23 +21,23 @@ import vavi.swing.JFileChooserTextField;
 
 
 /**
- * {@link vavi.apps.editablePanel.beans.ImagePanel} ‚ÌƒvƒƒpƒeƒBƒGƒfƒBƒ^‚Å‚·D
+ * {@link vavi.apps.editablePanel.beans.ImagePanel} ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ã§ã™ï¼
  * 
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 020515 nsano initial version <br>
  */
 public class ImagePanelCustomizer extends JComponent implements Customizer {
 
-    /** ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ */
+    /** ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ« */
     private static final ResourceBundle rb = ResourceBundle.getBundle("vavi.swing.resource", Locale.getDefault());
 
-    /** •ÒW‘ÎÛ */
+    /** ç·¨é›†å¯¾è±¡ */
     private ImagePanel imagePanel;
 
-    /** ƒCƒ[ƒW‚Ìƒtƒ@ƒCƒ‹ƒ`ƒ…[ƒU */
+    /** ã‚¤ãƒ¡ãƒ¼ã‚¸ã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒãƒ¥ãƒ¼ã‚¶ */
     private JFileChooserTextField imageChooser = new JFileChooserTextField();
 
-    /** ƒCƒ[ƒWƒpƒlƒ‹‚ÌƒvƒƒpƒeƒBƒGƒfƒBƒ^ */
+    /** ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‘ãƒãƒ«ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ */
     public ImagePanelCustomizer() {
 
         this.setLayout(new BorderLayout());
@@ -61,7 +61,7 @@ public class ImagePanelCustomizer extends JComponent implements Customizer {
         }
     };
 
-    /** •ÒW‘ÎÛ‚ğİ’è‚µ‚Ü‚·D */
+    /** ç·¨é›†å¯¾è±¡ã‚’è¨­å®šã—ã¾ã™ï¼ */
     public void setObject(Object object) {
         imagePanel = (ImagePanel) object;
     }

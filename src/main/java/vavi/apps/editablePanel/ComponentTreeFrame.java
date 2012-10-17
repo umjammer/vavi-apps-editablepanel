@@ -43,7 +43,7 @@ import vavi.util.Debug;
 
 
 /**
- * ƒ‚ƒfƒ‹‚ÌƒcƒŠ[ƒrƒ…[‚Æ•”•iƒpƒŒƒbƒg‚ÌƒtƒŒ[ƒ€‚Å‚·D
+ * ãƒ¢ãƒ‡ãƒ«ã®ãƒ„ãƒªãƒ¼ãƒ“ãƒ¥ãƒ¼ã¨éƒ¨å“ãƒ‘ãƒ¬ãƒƒãƒˆã®ãƒ•ãƒ¬ãƒ¼ãƒ ã§ã™ï¼
  * 
  * @depends ./EditablePanelResource${I18N}.properties
  * 
@@ -53,7 +53,7 @@ import vavi.util.Debug;
  */
 public class ComponentTreeFrame extends JFrame {
 
-    /** ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ */
+    /** ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ« */
     private static final ResourceBundle rb = ResourceBundle.getBundle("vavi.apps.editablePanel.EditablePanelResource", Locale.getDefault());
 
     /** tool buttons */
@@ -79,9 +79,9 @@ public class ComponentTreeFrame extends JFrame {
     private Container container;
 
     /**
-     * ƒcƒŠ[ƒrƒ…[‚ÌƒtƒŒ[ƒ€‚ğ\’z‚µ‚Ü‚·D
+     * ãƒ„ãƒªãƒ¼ãƒ“ãƒ¥ãƒ¼ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      * 
-     * container ƒ‹[ƒg‚Æ‚È‚éƒRƒ“ƒeƒi‚ÌƒRƒ“ƒgƒ[ƒ‰
+     * container ãƒ«ãƒ¼ãƒˆã¨ãªã‚‹ã‚³ãƒ³ãƒ†ãƒŠã®ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ©
      */
     public ComponentTreeFrame() {
 
@@ -160,7 +160,7 @@ public class ComponentTreeFrame extends JFrame {
 
     // internal actions -------------------------------------------------------
 
-    /** íœƒ{ƒ^ƒ“‚Ìˆ— */
+    /** å‰Šé™¤ãƒœã‚¿ãƒ³ã®å‡¦ç† */
     private Action deleteAction = new AbstractAction(rb.getString("ctFrame.button.delete")) {
         public void actionPerformed(ActionEvent ev) {
             fireEditorUpdated(new EditorEvent(this, "delete"));
@@ -168,7 +168,7 @@ public class ComponentTreeFrame extends JFrame {
         }
     };
 
-    /** •\¦ƒ{ƒ^ƒ“‚Ìˆ— */
+    /** è¡¨ç¤ºãƒœã‚¿ãƒ³ã®å‡¦ç† */
     private Action showAction = new AbstractAction(rb.getString("ctFrame.button.show")) {
         /** */
         public void actionPerformed(ActionEvent ev) {
@@ -186,7 +186,7 @@ public class ComponentTreeFrame extends JFrame {
         }
     };
 
-    /** ”ñ•\¦ƒ{ƒ^ƒ“‚Ìˆ— */
+    /** éè¡¨ç¤ºãƒœã‚¿ãƒ³ã®å‡¦ç† */
     private Action hideAction = new AbstractAction(rb.getString("ctFrame.button.hide")) {
         public void actionPerformed(ActionEvent ev) {
             TreePath[] selected = tree.getSelectionPaths();
@@ -237,7 +237,7 @@ public class ComponentTreeFrame extends JFrame {
     // internal listener ------------------------------------------------------
 
     /**
-     * ƒcƒŠ[‚Ì‘I‘ğ‚ª•ÏX‚³‚ê‚½ê‡‚ÉŒÄ‚Î‚ê‚Ü‚·D
+     * ãƒ„ãƒªãƒ¼ã®é¸æŠãŒå¤‰æ›´ã•ã‚ŒãŸå ´åˆã«å‘¼ã°ã‚Œã¾ã™ï¼
      */
     private TreeSelectionListener tsl = new TreeSelectionListener() {
         public void valueChanged(TreeSelectionEvent ev) {
@@ -266,7 +266,7 @@ public class ComponentTreeFrame extends JFrame {
     // functions --------------------------------------------------------------
 
     /**
-     * ƒcƒŠ[ã‚Ì‘SƒpƒX‚ğƒ‚ƒfƒ‹‚Ì–¼‘O‚ğƒL[‚É•Ô‚µ‚Ü‚·D
+     * ãƒ„ãƒªãƒ¼ä¸Šã®å…¨ãƒ‘ã‚¹ã‚’ãƒ¢ãƒ‡ãƒ«ã®åå‰ã‚’ã‚­ãƒ¼ã«è¿”ã—ã¾ã™ï¼
      */
     private Map<String, TreePath> getAllTreePath() {
         Map<String, TreePath> allTreePath = new HashMap<String, TreePath>();
@@ -278,7 +278,7 @@ public class ComponentTreeFrame extends JFrame {
     }
 
     /**
-     * V‚µ‚¢ƒcƒŠ[ƒrƒ…[‚Ìƒm[ƒh‚ğì¬‚µ‚Ü‚·D
+     * æ–°ã—ã„ãƒ„ãƒªãƒ¼ãƒ“ãƒ¥ãƒ¼ã®ãƒãƒ¼ãƒ‰ã‚’ä½œæˆã—ã¾ã™ï¼
      * 
      * @see java.awt.event.ContainerListener#componentAdded(java.awt.event.ContainerEvent)
      */
@@ -292,7 +292,7 @@ public class ComponentTreeFrame extends JFrame {
             return;
         }
 
-        // ƒm[ƒhì¬
+        // ãƒãƒ¼ãƒ‰ä½œæˆ
         root.add(new ComponentTreeNode(component));
         treeModel.setRoot(root);
 
@@ -300,7 +300,7 @@ public class ComponentTreeFrame extends JFrame {
     }
 
     /**
-     * ƒcƒŠ[ƒrƒ…[‚Ìƒm[ƒh‚ğíœ‚µ‚Ü‚·D
+     * ãƒ„ãƒªãƒ¼ãƒ“ãƒ¥ãƒ¼ã®ãƒãƒ¼ãƒ‰ã‚’å‰Šé™¤ã—ã¾ã™ï¼
      * 
      * @see java.awt.event.ContainerListener#componentRemoved(java.awt.event.ContainerEvent)
      */
@@ -315,7 +315,7 @@ public class ComponentTreeFrame extends JFrame {
 
         ComponentTreeNode node = (ComponentTreeNode) allTreePath.get(name).getLastPathComponent();
 
-        // ƒcƒŠ[‚©‚çƒm[ƒh‚ğÁ‹
+        // ãƒ„ãƒªãƒ¼ã‹ã‚‰ãƒãƒ¼ãƒ‰ã‚’æ¶ˆå»
         root.remove(node);
         treeModel.setRoot(root);
 
@@ -323,12 +323,12 @@ public class ComponentTreeFrame extends JFrame {
     }
 
     /**
-     * ƒcƒŠ[ƒrƒ…[‚Ìƒm[ƒh‚ğ‘I‘ğ‚µ‚Ü‚·D
+     * ãƒ„ãƒªãƒ¼ãƒ“ãƒ¥ãƒ¼ã®ãƒãƒ¼ãƒ‰ã‚’é¸æŠã—ã¾ã™ï¼
      * 
      * @see EditorListener#editorUpdated(EditorEvent)
      */
     public synchronized void selectView(List<Component> selected) {
-        tree.removeTreeSelectionListener(tsl); // Ä‹A‚µ‚È‚¢‚æ‚¤‚É
+        tree.removeTreeSelectionListener(tsl); // å†å¸°ã—ãªã„ã‚ˆã†ã«
 
         tree.getSelectionModel().clearSelection();
 
@@ -344,7 +344,7 @@ public class ComponentTreeFrame extends JFrame {
 
         setActionState();
 
-        tree.addTreeSelectionListener(tsl); // •œ‹A
+        tree.addTreeSelectionListener(tsl); // å¾©å¸°
     }
 
     // listeners for external -------------------------------------------------
@@ -405,15 +405,15 @@ public class ComponentTreeFrame extends JFrame {
 
     // -------------------------------------------------------------------------
 
-    /** EditorEvent ‹@\‚Ìƒ†[ƒeƒBƒŠƒeƒB */
+    /** EditorEvent æ©Ÿæ§‹ã®ãƒ¦ãƒ¼ãƒ†ã‚£ãƒªãƒ†ã‚£ */
     private EditorSupport editorSupport = new EditorSupport();
 
-    /** Editor ƒŠƒXƒi[‚ğƒAƒ^ƒbƒ`‚µ‚Ü‚·D */
+    /** Editor ãƒªã‚¹ãƒŠãƒ¼ã‚’ã‚¢ã‚¿ãƒƒãƒã—ã¾ã™ï¼ */
     public void addEditorListener(EditorListener l) {
         editorSupport.addEditorListener(l);
     }
 
-    /** Editor ƒŠƒXƒi[‚ğƒŠƒ€[ƒu‚µ‚Ü‚·D */
+    /** Editor ãƒªã‚¹ãƒŠãƒ¼ã‚’ãƒªãƒ ãƒ¼ãƒ–ã—ã¾ã™ï¼ */
     public void removeEditorListener(EditorListener l) {
         editorSupport.removeEditorListener(l);
     }

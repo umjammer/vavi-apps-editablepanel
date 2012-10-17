@@ -19,7 +19,7 @@ import javax.swing.JRadioButton;
 
 
 /**
- * •¡”‚Ìƒ‰ƒWƒIƒ{ƒ^ƒ“‚©‚ç‘I‘ğ‚Å‚«‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚Å‚·D
+ * è¤‡æ•°ã®ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã‹ã‚‰é¸æŠã§ãã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã§ã™ï¼
  * <p>
  * TODO use ListModel
  * </p>
@@ -30,14 +30,14 @@ import javax.swing.JRadioButton;
  */
 public class RadioButtons extends JComponent {
 
-    /** ƒ‰ƒWƒIƒ{ƒ^ƒ“ƒOƒ‹[ƒv */
+    /** ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã‚°ãƒ«ãƒ¼ãƒ— */
     private Map<String, JRadioButton> radioButtons;
 
     /** */
     private int orientation;
 
     /**
-     * ƒ‰ƒWƒIƒ{ƒ^ƒ“ƒOƒ‹[ƒv‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ\’z‚µ‚Ü‚·D
+     * ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã‚°ãƒ«ãƒ¼ãƒ—ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public RadioButtons() {
         radioButtons = new HashMap<String, JRadioButton>();
@@ -50,7 +50,7 @@ public class RadioButtons extends JComponent {
     }
 
     /**
-     * ƒ‰ƒWƒIƒ{ƒ^ƒ“‚Ì”z’u‚ğİ’è‚µ‚Ü‚·D
+     * ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®é…ç½®ã‚’è¨­å®šã—ã¾ã™ï¼
      * 
      * @param orientation 0, 1
      */
@@ -72,9 +72,9 @@ public class RadioButtons extends JComponent {
     }
 
     /**
-     * ƒ‰ƒWƒIƒ{ƒ^ƒ“‚ÌƒeƒLƒXƒg‚ğİ’è‚µ‚Ü‚·D
+     * ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’è¨­å®šã—ã¾ã™ï¼
      * 
-     * @param items ƒ‰ƒWƒIƒ{ƒ^ƒ“‚ÌƒeƒLƒXƒg‚Ì”z—ñ
+     * @param items ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®ãƒ†ã‚­ã‚¹ãƒˆã®é…åˆ—
      */
     public synchronized void setItems(String[] items) {
 
@@ -98,7 +98,7 @@ public class RadioButtons extends JComponent {
     }
 
     /**
-     * ƒ‰ƒWƒIƒ{ƒ^ƒ“‚ÌƒeƒLƒXƒg‚Ì”z—ñ‚ğæ“¾‚µ‚Ü‚·D
+     * ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®ãƒ†ã‚­ã‚¹ãƒˆã®é…åˆ—ã‚’å–å¾—ã—ã¾ã™ï¼
      */
     public synchronized String[] getItems() {
         String[] items = new String[radioButtons.size()];
@@ -114,9 +114,9 @@ public class RadioButtons extends JComponent {
     }
 
     /**
-     * w’è‚µ‚½ƒeƒLƒXƒg‚Ìƒ‰ƒWƒIƒ{ƒ^ƒ“‚ğ‘I‘ğ‚µ‚Ü‚·D
+     * æŒ‡å®šã—ãŸãƒ†ã‚­ã‚¹ãƒˆã®ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã‚’é¸æŠã—ã¾ã™ï¼
      * 
-     * @param item ‘I‘ğ‚µ‚½‚¢ƒ{ƒ^ƒ“‚ÌƒeƒLƒXƒg
+     * @param item é¸æŠã—ãŸã„ãƒœã‚¿ãƒ³ã®ãƒ†ã‚­ã‚¹ãƒˆ
      */
     public synchronized void setSelectedItem(String item) {
         JRadioButton selectedButton = radioButtons.get(item);
@@ -130,7 +130,7 @@ public class RadioButtons extends JComponent {
     }
 
     /**
-     * ‘I‘ğ‚³‚ê‚½ƒ‰ƒWƒIƒ{ƒ^ƒ“‚ÌƒeƒLƒXƒg‚ğæ“¾‚µ‚Ü‚·D
+     * é¸æŠã•ã‚ŒãŸãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®ãƒ†ã‚­ã‚¹ãƒˆã‚’å–å¾—ã—ã¾ã™ï¼
      */
     public String getSelectedItem() {
         Iterator<JRadioButton> e = radioButtons.values().iterator();
@@ -146,7 +146,7 @@ public class RadioButtons extends JComponent {
     // -------------------------------------------------------------------------
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É setEnabled ‚·‚é‚æ‚¤ƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« setEnabled ã™ã‚‹ã‚ˆã†ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      */
     public void setEnabled(boolean isEnabled) {
         super.setEnabled(isEnabled);
@@ -157,9 +157,9 @@ public class RadioButtons extends JComponent {
     }
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É add ‚·‚é‚æ‚¤ƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« add ã™ã‚‹ã‚ˆã†ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      * 
-     * @param l ƒ}ƒEƒXƒŠƒXƒi
+     * @param l ãƒã‚¦ã‚¹ãƒªã‚¹ãƒŠ
      */
     public synchronized void addMouseListener(MouseListener l) {
         super.addMouseListener(l);
@@ -170,9 +170,9 @@ public class RadioButtons extends JComponent {
     }
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É add ‚·‚é‚æ‚¤ƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« add ã™ã‚‹ã‚ˆã†ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      * 
-     * @param l ƒ}ƒEƒXƒ‚[ƒVƒ‡ƒ“ƒŠƒXƒi
+     * @param l ãƒã‚¦ã‚¹ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ãƒªã‚¹ãƒŠ
      */
     public synchronized void addMouseMotionListener(MouseMotionListener l) {
         super.addMouseMotionListener(l);
@@ -183,9 +183,9 @@ public class RadioButtons extends JComponent {
     }
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É remove ‚·‚é‚æ‚¤ƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« remove ã™ã‚‹ã‚ˆã†ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      * 
-     * @param l ƒ}ƒEƒXƒŠƒXƒi
+     * @param l ãƒã‚¦ã‚¹ãƒªã‚¹ãƒŠ
      */
     public synchronized void removeMouseListener(MouseListener l) {
         super.removeMouseListener(l);
@@ -196,9 +196,9 @@ public class RadioButtons extends JComponent {
     }
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É remove ‚·‚é‚æ‚¤ƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« remove ã™ã‚‹ã‚ˆã†ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      * 
-     * @param l ƒ}ƒEƒXƒ‚[ƒVƒ‡ƒ“ƒŠƒXƒi
+     * @param l ãƒã‚¦ã‚¹ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ãƒªã‚¹ãƒŠ
      */
     public synchronized void removeMouseMotionListener(MouseMotionListener l) {
         super.removeMouseMotionListener(l);

@@ -23,26 +23,26 @@ import javax.swing.JTextField;
 
 
 /**
- * {@link vavi.apps.editablePanel.beans.RadioButtons} ‚ÌƒJƒXƒ^ƒ}ƒCƒU‚Å‚·D
+ * {@link vavi.apps.editablePanel.beans.RadioButtons} ã®ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚¶ã§ã™ï¼
  * 
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 020515 nsano initial version <br>
  */
 public class RadioButtonsCustomizer extends JComponent implements Customizer {
 
-    /** ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ */
+    /** ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ« */
     private static final ResourceBundle rb = ResourceBundle.getBundle("vavi.swing.resource", Locale.getDefault());
 
-    /** •ÒW‘ÎÛ */
+    /** ç·¨é›†å¯¾è±¡ */
     private RadioButtons radioButtons;
 
-    /** ƒ‰ƒWƒIƒ{ƒ^ƒ“‚ÌƒAƒCƒeƒ€‚ğ•ÒW‚·‚éƒtƒB[ƒ‹ƒh */
+    /** ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç·¨é›†ã™ã‚‹ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ */
     private JTextField items = new JTextField();
 
-    /** ƒ‰ƒWƒIƒ{ƒ^ƒ“‚Ì”z’u•ûŒü‚ÌƒRƒ“ƒ{ƒ{ƒbƒNƒX */
+    /** ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®é…ç½®æ–¹å‘ã®ã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹ */
     private JComboBox orientation = new JComboBox();
 
-    /** ƒ‰ƒWƒIƒ{ƒ^ƒ“‚ÌƒvƒƒpƒeƒBƒGƒfƒBƒ^ */
+    /** ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ */
     public RadioButtonsCustomizer() {
 
         this.setAutoscrolls(true);
@@ -75,7 +75,7 @@ public class RadioButtonsCustomizer extends JComponent implements Customizer {
         }
     };
 
-    /** ƒ‰ƒWƒIƒ{ƒ^ƒ“‚Ì”z’u•ûŒü‚ÌƒRƒ“ƒ{ƒ{ƒbƒNƒX‚ÌƒŠƒXƒi */
+    /** ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®é…ç½®æ–¹å‘ã®ã‚³ãƒ³ãƒœãƒœãƒƒã‚¯ã‚¹ã®ãƒªã‚¹ãƒŠ */
     private ItemListener orientationListener = new ItemListener() {
         public void itemStateChanged(ItemEvent ev) {
             radioButtons.setOrientation(orientation.getSelectedIndex());
@@ -83,7 +83,7 @@ public class RadioButtonsCustomizer extends JComponent implements Customizer {
     };
 
     /**
-     * •ÒW‘ÎÛ‚ğİ’è‚µ‚Ü‚·D
+     * ç·¨é›†å¯¾è±¡ã‚’è¨­å®šã—ã¾ã™ï¼
      */
     public void setObject(Object object) {
         radioButtons = (RadioButtons) object;

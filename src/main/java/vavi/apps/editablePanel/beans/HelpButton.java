@@ -20,7 +20,7 @@ import vavi.util.Debug;
 
 
 /**
- * ƒuƒ‰ƒEƒU‚ğ•\¦‚·‚éƒwƒ‹ƒvƒ{ƒ^ƒ“‚Å‚·D
+ * ãƒ–ãƒ©ã‚¦ã‚¶ã‚’è¡¨ç¤ºã™ã‚‹ãƒ˜ãƒ«ãƒ—ãƒœã‚¿ãƒ³ã§ã™ï¼
  * 
  * @todo browser property
  * 
@@ -29,23 +29,23 @@ import vavi.util.Debug;
  */
 public class HelpButton extends JButton {
 
-    /** ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ */
+    /** ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ« */
     private static final ResourceBundle rb = ResourceBundle.getBundle("vavi.swing.resource", Locale.getDefault());
 
-    /** ƒuƒ‰ƒEƒU‚Å•\¦‚·‚é URL */
+    /** ãƒ–ãƒ©ã‚¦ã‚¶ã§è¡¨ç¤ºã™ã‚‹ URL */
     private String url;
 
     /**
-     * ƒuƒ‰ƒEƒU‚ğ•\¦‚·‚éƒwƒ‹ƒvƒ{ƒ^ƒ“‚ğ\’z‚µ‚Ü‚·D
+     * ãƒ–ãƒ©ã‚¦ã‚¶ã‚’è¡¨ç¤ºã™ã‚‹ãƒ˜ãƒ«ãƒ—ãƒœã‚¿ãƒ³ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public HelpButton() {
         setText(rb.getString("common.button.help.text"));
         addActionListener(helpActionListener);
     }
 
-    /** ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½ˆ—Bƒuƒ‰ƒEƒU‚ğ‹N“® */
+    /** ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸå‡¦ç†ã€‚ãƒ–ãƒ©ã‚¦ã‚¶ã‚’èµ·å‹• */
     private ActionListener helpActionListener = new ActionListener() {
-        /** ƒ[ƒJƒ‹ƒtƒ@ƒCƒ‹‚É‚ ‚éƒuƒ‰ƒEƒU‚ÌƒpƒX */
+        /** ãƒ­ãƒ¼ã‚«ãƒ«ãƒ•ã‚¡ã‚¤ãƒ«ã«ã‚ã‚‹ãƒ–ãƒ©ã‚¦ã‚¶ã®ãƒ‘ã‚¹ */
         final String browserPath = props.getProperty("ep.path.browser");
 
         public void actionPerformed(ActionEvent ev) {
@@ -58,7 +58,7 @@ public class HelpButton extends JButton {
     };
 
     /**
-     * ƒuƒ‰ƒEƒU‚Å•\¦‚·‚é URL ‚ğƒZƒbƒg‚µ‚Ü‚·D
+     * ãƒ–ãƒ©ã‚¦ã‚¶ã§è¡¨ç¤ºã™ã‚‹ URL ã‚’ã‚»ãƒƒãƒˆã—ã¾ã™ï¼
      * 
      * @param url
      */
@@ -67,7 +67,7 @@ public class HelpButton extends JButton {
     }
 
     /**
-     * ƒuƒ‰ƒEƒU‚Å•\¦‚·‚é URL ‚ğæ“¾‚µ‚Ü‚·D
+     * ãƒ–ãƒ©ã‚¦ã‚¶ã§è¡¨ç¤ºã™ã‚‹ URL ã‚’å–å¾—ã—ã¾ã™ï¼
      */
     public String getUrl() {
         return url;
@@ -75,14 +75,14 @@ public class HelpButton extends JButton {
 
     // -------------------------------------------------------------------------
 
-    /** ƒvƒƒpƒeƒB */
+    /** ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ */
     private static Properties props = new Properties();
 
     /**
-     * ‰Šú‰»‚µ‚Ü‚·D
+     * åˆæœŸåŒ–ã—ã¾ã™ï¼
      */
     static {
-        // ƒvƒƒpƒeƒBƒtƒ@ƒCƒ‹‚ÌƒpƒX
+        // ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹
         final String path = "EditablePanel.properties";
 
         try {

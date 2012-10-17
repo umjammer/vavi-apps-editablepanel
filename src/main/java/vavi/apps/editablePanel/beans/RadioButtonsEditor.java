@@ -14,7 +14,7 @@ import javax.swing.JComponent;
 
 
 /**
- * {@link vavi.apps.editablePanel.beans.RadioButtons} ‚ÌƒvƒƒpƒeƒBƒGƒfƒBƒ^‚Å‚·D
+ * {@link vavi.apps.editablePanel.beans.RadioButtons} ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ã§ã™ï¼
  * 
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 020515 nsano initial version <br>
@@ -22,18 +22,18 @@ import javax.swing.JComponent;
  */
 public class RadioButtonsEditor extends PropertyEditorSupport implements PropertyEditor {
 
-    /** ƒ‰ƒWƒIƒ{ƒ^ƒ“‚ÌƒvƒƒpƒeƒBƒGƒfƒBƒ^ */
+    /** ãƒ©ã‚¸ã‚ªãƒœã‚¿ãƒ³ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ */
     private JComponent customEditor = new RadioButtonsCustomizer();
 
     /**
-     * ƒJƒXƒ^ƒ€ƒGƒfƒBƒ^‚ğƒTƒ|[ƒg‚µ‚Ü‚·D
+     * ã‚«ã‚¹ã‚¿ãƒ ã‚¨ãƒ‡ã‚£ã‚¿ã‚’ã‚µãƒãƒ¼ãƒˆã—ã¾ã™ï¼
      */
     public boolean supportsCustomEditor() {
         return true;
     }
 
     /**
-     * “à‘ ‚ÌƒvƒƒpƒeƒBƒGƒfƒBƒ^‚ğ•Ô‚µ‚Ü‚·D
+     * å†…è”µã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ã‚’è¿”ã—ã¾ã™ï¼
      */
     public Component getCustomEditor() {
         return customEditor;

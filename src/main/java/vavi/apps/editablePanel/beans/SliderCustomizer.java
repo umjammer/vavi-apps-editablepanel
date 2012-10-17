@@ -19,7 +19,7 @@ import javax.swing.JTextField;
 
 
 /**
- * {@link vavi.apps.editablePanel.beans.Slider} ‚ÌƒJƒXƒ^ƒ}ƒCƒU‚Å‚·DD
+ * {@link vavi.apps.editablePanel.beans.Slider} ã®ã‚«ã‚¹ã‚¿ãƒã‚¤ã‚¶ã§ã™ï¼ï¼
  * 
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 010823 nsano initial version <br>
@@ -27,22 +27,22 @@ import javax.swing.JTextField;
  */
 public class SliderCustomizer extends JComponent implements Customizer {
 
-    /** ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ */
+    /** ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ« */
     private static final ResourceBundle rb = ResourceBundle.getBundle("vavi.swing.resource", Locale.getDefault());
 
-    /** •ÒW‘ÎÛ */
+    /** ç·¨é›†å¯¾è±¡ */
     private Slider slider;
 
-    /** Å¬’l‚ÌƒtƒB[ƒ‹ƒh */
+    /** æœ€å°å€¤ã®ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ */
     private JTextField minField = new JTextField();
 
-    /** Å‘å’l‚ÌƒtƒB[ƒ‹ƒh */
+    /** æœ€å¤§å€¤ã®ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ */
     private JTextField maxField = new JTextField();
 
-    /** –Ú·‚è‚Ì•ªŠ„”‚ÌƒtƒB[ƒ‹ƒh */
+    /** ç›®ç››ã‚Šã®åˆ†å‰²æ•°ã®ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ */
     private JTextField divField = new JTextField();
 
-    /** ƒXƒ‰ƒCƒ_[‚ÌƒvƒƒpƒeƒBƒGƒfƒBƒ^ */
+    /** ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚¨ãƒ‡ã‚£ã‚¿ */
     public SliderCustomizer() {
 
         this.setLayout(new GridLayout(3, 2));
@@ -68,7 +68,7 @@ public class SliderCustomizer extends JComponent implements Customizer {
     };
 
     /**
-     * •ÒW‘ÎÛ‚ğİ’è‚µ‚Ü‚·D
+     * ç·¨é›†å¯¾è±¡ã‚’è¨­å®šã—ã¾ã™ï¼
      */
     public void setObject(Object object) {
         slider = (Slider) object;

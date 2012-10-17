@@ -24,7 +24,7 @@ import javax.swing.event.ChangeListener;
 
 
 /**
- * Šg’£ƒXƒ‰ƒCƒ_[ƒRƒ“ƒ|[ƒlƒ“ƒg‚Å‚·D
+ * æ‹¡å¼µã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã§ã™ï¼
  * 
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 010823 nsano initial version <br>
@@ -32,7 +32,7 @@ import javax.swing.event.ChangeListener;
  */
 public class Slider extends JComponent {
 
-    /** æ” */
+    /** ä¹—æ•° */
     private int powerCount = -1;
 
     /** */
@@ -44,17 +44,17 @@ public class Slider extends JComponent {
     /** */
     private int dividingCount;
 
-    /** ƒXƒ‰ƒCƒ_[ */
+    /** ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ */
     private JSlider slider;
 
-    /** ƒeƒLƒXƒg—pƒpƒlƒ‹ */
+    /** ãƒ†ã‚­ã‚¹ãƒˆç”¨ãƒ‘ãƒãƒ« */
     private JPanel labelPanel;
 
-    /** ƒeƒLƒXƒg */
+    /** ãƒ†ã‚­ã‚¹ãƒˆ */
     private JTextField label;
 
     /**
-     * Šg’£ƒXƒ‰ƒCƒ_[‚ğ\’z‚µ‚Ü‚·D
+     * æ‹¡å¼µã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public Slider() {
 
@@ -81,9 +81,9 @@ public class Slider extends JComponent {
         setLabelText();
     }
 
-    /** ¬”“_ˆÈ‰º‰½Œ…‚Ü‚Å‚ ‚é‚©‚ğİ’è‚·‚éD */
+    /** å°æ•°ç‚¹ä»¥ä¸‹ä½•æ¡ã¾ã§ã‚ã‚‹ã‹ã‚’è¨­å®šã™ã‚‹ï¼ */
     private void setPowerCount() {
-        // Å¬EÅ‘å’lİ’è‚ª¬”“_‚ğŠÜ‚Ş‚©‚Ç‚¤‚©ƒ`ƒFƒbƒN‚·‚éB
+        // æœ€å°ãƒ»æœ€å¤§å€¤è¨­å®šãŒå°æ•°ç‚¹ã‚’å«ã‚€ã‹ã©ã†ã‹ãƒã‚§ãƒƒã‚¯ã™ã‚‹ã€‚
         int minFP = getFloatingPoint(minimum);
         int maxFP = getFloatingPoint(maximum);
 
@@ -111,7 +111,7 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ƒXƒ‰ƒCƒ_[‚ÌÅ¬’l‚ğİ’è‚µ‚Ü‚·D
+     * ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®æœ€å°å€¤ã‚’è¨­å®šã—ã¾ã™ï¼
      * 
      * @param minimum
      */
@@ -121,14 +121,14 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ƒXƒ‰ƒCƒ_[‚ÌÅ¬’l‚ğæ“¾‚µ‚Ü‚·D
+     * ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®æœ€å°å€¤ã‚’å–å¾—ã—ã¾ã™ï¼
      */
     public double getMinimum() {
         return minimum;
     }
 
     /**
-     * ƒXƒ‰ƒCƒ_[‚ÌÅ‘å’l‚ğİ’è‚µ‚Ü‚·D
+     * ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®æœ€å¤§å€¤ã‚’è¨­å®šã—ã¾ã™ï¼
      * 
      * @param maximum
      */
@@ -138,17 +138,17 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ƒXƒ‰ƒCƒ_[‚ÌÅ‘å’l‚ğæ“¾‚µ‚Ü‚·D
+     * ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®æœ€å¤§å€¤ã‚’å–å¾—ã—ã¾ã™ï¼
      */
     public double getMaximum() {
         return maximum;
     }
 
     /**
-     * ƒXƒ‰ƒCƒ_[‚Ì’l‚ğİ’è‚µ‚Ü‚·D
+     * ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®å€¤ã‚’è¨­å®šã—ã¾ã™ï¼
      */
     public void setValue(double value) {
-        // double ‚Ì’l‚ğ‹t‚É“K‡‚·‚é‚æ‚¤‚É int ‚É‚µ‚È‚­‚Ä‚Í‚È‚ç‚È‚¢ !!
+        // double ã®å€¤ã‚’é€†ã«é©åˆã™ã‚‹ã‚ˆã†ã« int ã«ã—ãªãã¦ã¯ãªã‚‰ãªã„ !!
         slider.setValue(getValidatedInt(value));
 
         label.validate();
@@ -156,16 +156,16 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ƒXƒ‰ƒCƒ_[‚Ì’l‚ğæ“¾‚µ‚Ü‚·D
+     * ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®å€¤ã‚’å–å¾—ã—ã¾ã™ï¼
      */
     public double getValue() {
         return new Double(label.getText()).doubleValue();
     }
 
     /**
-     * ƒXƒ‰ƒCƒ_[‚Ì–Ú·‚è‚Ì•ªŠ„‚ğİ’è‚µ‚Ü‚·D
+     * ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ç›®ç››ã‚Šã®åˆ†å‰²ã‚’è¨­å®šã—ã¾ã™ï¼
      * 
-     * @param dividingCount –Ú·‚è‚Ì•ªŠ„”
+     * @param dividingCount ç›®ç››ã‚Šã®åˆ†å‰²æ•°
      */
     public void setDividingCount(int dividingCount) {
         this.dividingCount = dividingCount;
@@ -178,14 +178,14 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ƒXƒ‰ƒCƒ_[‚Ì–Ú·‚è‚Ì•ªŠ„”‚ğæ“¾‚µ‚Ü‚·D
+     * ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ç›®ç››ã‚Šã®åˆ†å‰²æ•°ã‚’å–å¾—ã—ã¾ã™ï¼
      */
     public int getDividingCount() {
         return dividingCount;
     }
 
     /**
-     * ƒXƒ‰ƒCƒ_[‚Ìƒ‰ƒxƒ‹ƒe[ƒuƒ‹‚ğì¬‚µ‚Ü‚·D
+     * ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®ãƒ©ãƒ™ãƒ«ãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã¾ã™ï¼
      */
     private Hashtable<Integer, JLabel> getLabelTable(int majorSpace) {
         Hashtable<Integer, JLabel> dic = new Hashtable<Integer, JLabel>();
@@ -208,7 +208,7 @@ public class Slider extends JComponent {
     }
 
     /**
-     * double ’l‚ğƒXƒ‰ƒCƒ_[‚Å•\¦‰Â”\‚È int ’l‚É•ÏŠ·‚µ‚Ü‚·D
+     * double å€¤ã‚’ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã§è¡¨ç¤ºå¯èƒ½ãª int å€¤ã«å¤‰æ›ã—ã¾ã™ï¼
      */
     private int getValidatedInt(double d) {
         setPowerCount();
@@ -221,7 +221,7 @@ public class Slider extends JComponent {
     }
 
     /**
-     * int ’l‚ğƒXƒ‰ƒCƒ_[‚Ì—LŒøŒ…”‚É]‚Á‚½ double ’l‚É•ÏŠ·‚µ‚Ü‚·D
+     * int å€¤ã‚’ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®æœ‰åŠ¹æ¡æ•°ã«å¾“ã£ãŸ double å€¤ã«å¤‰æ›ã—ã¾ã™ï¼
      */
     private double getValidatedDouble(int originValue) {
         setPowerCount();
@@ -236,7 +236,7 @@ public class Slider extends JComponent {
     }
 
     /**
-     * double ’l‚ğƒXƒ‰ƒCƒ_[‚Ì—LŒøŒ…”‚É]‚Á‚½ String ‚É•ÏŠ·‚µ‚Ü‚·D
+     * double å€¤ã‚’ã‚¹ãƒ©ã‚¤ãƒ€ãƒ¼ã®æœ‰åŠ¹æ¡æ•°ã«å¾“ã£ãŸ String ã«å¤‰æ›ã—ã¾ã™ï¼
      */
     private String getDoubleString(double value) {
         String numberString = Double.toString(value);
@@ -255,7 +255,7 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ¬”“_‰½Œ…‚Ü‚Å—LŒø‚©‚ğ•Ô‚µ‚Ü‚·D
+     * å°æ•°ç‚¹ä½•æ¡ã¾ã§æœ‰åŠ¹ã‹ã‚’è¿”ã—ã¾ã™ï¼
      */
     private static int getFloatingPoint(double number) {
         String numberString = String.valueOf(number);
@@ -270,7 +270,7 @@ public class Slider extends JComponent {
     // -------------------------------------------------------------------------
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É setEnabled ‚·‚é‚æ‚¤‚ÉƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« setEnabled ã™ã‚‹ã‚ˆã†ã«ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      */
     public void setEnabled(boolean isEnabled) {
         super.setEnabled(isEnabled);
@@ -280,9 +280,9 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É add ‚·‚é‚æ‚¤ƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« add ã™ã‚‹ã‚ˆã†ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      * 
-     * @param l ƒ}ƒEƒXƒŠƒXƒi
+     * @param l ãƒã‚¦ã‚¹ãƒªã‚¹ãƒŠ
      */
     public synchronized void addMouseListener(MouseListener l) {
         super.addMouseListener(l);
@@ -292,9 +292,9 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É add ‚·‚é‚æ‚¤ƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« add ã™ã‚‹ã‚ˆã†ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      * 
-     * @param l ƒ}ƒEƒXƒ‚[ƒVƒ‡ƒ“ƒŠƒXƒi
+     * @param l ãƒã‚¦ã‚¹ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ãƒªã‚¹ãƒŠ
      */
     public synchronized void addMouseMotionListener(MouseMotionListener l) {
         super.addMouseMotionListener(l);
@@ -304,9 +304,9 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É remove ‚·‚é‚æ‚¤ƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« remove ã™ã‚‹ã‚ˆã†ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      * 
-     * @param l ƒ}ƒEƒXƒŠƒXƒi
+     * @param l ãƒã‚¦ã‚¹ãƒªã‚¹ãƒŠ
      */
     public synchronized void removeMouseListener(MouseListener l) {
         super.removeMouseListener(l);
@@ -316,9 +316,9 @@ public class Slider extends JComponent {
     }
 
     /**
-     * ‚·‚×‚Ä‚ÌƒRƒ“ƒ|[ƒlƒ“ƒg‚É remove ‚·‚é‚æ‚¤ƒI[ƒo[ƒ‰ƒCƒh‚µ‚Ü‚·D
+     * ã™ã¹ã¦ã®ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã« remove ã™ã‚‹ã‚ˆã†ã‚ªãƒ¼ãƒãƒ¼ãƒ©ã‚¤ãƒ‰ã—ã¾ã™ï¼
      * 
-     * @param l ƒ}ƒEƒXƒ‚[ƒVƒ‡ƒ“ƒŠƒXƒi
+     * @param l ãƒã‚¦ã‚¹ãƒ¢ãƒ¼ã‚·ãƒ§ãƒ³ãƒªã‚¹ãƒŠ
      */
     public synchronized void removeMouseMotionListener(MouseMotionListener l) {
         super.removeMouseMotionListener(l);

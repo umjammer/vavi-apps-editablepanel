@@ -26,7 +26,7 @@ import vavi.swing.event.EditorListener;
 
 
 /**
- * ƒƒjƒ…[‚ÌƒtƒŒ[ƒ€‚Å‚·D
+ * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã§ã™ï¼
  *
  * @editor	receive	cancelToAdd		unselect button
  *		receive	setEditable		set enabled true or false
@@ -39,20 +39,20 @@ import vavi.swing.event.EditorListener;
  */
 public class MenuFrame extends JFrame {
 
-    /** ƒŠƒ\[ƒXƒoƒ“ƒhƒ‹ */
+    /** ãƒªã‚½ãƒ¼ã‚¹ãƒãƒ³ãƒ‰ãƒ« */
     private static final ResourceBundle rb =
 	ResourceBundle.getBundle(
 	    "vavi.apps.editablePanel.EditablePanelResource",
 	    Locale.getDefault());
 
-    /** beans ƒZƒŒƒNƒ^ */
+    /** beans ã‚»ãƒ¬ã‚¯ã‚¿ */
     private JBeansTabbedPane palette;
 
     /** */
     private EventPlugSupport eps = new EventPlugSupport();
 
     /**
-     * ƒƒjƒ…[‚ÌƒtƒŒ[ƒ€‚ğ\’z‚µ‚Ü‚·D
+     * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’æ§‹ç¯‰ã—ã¾ã™ï¼
      */
     public MenuFrame() {
 	this.setTitle(rb.getString("menuFrame.title"));
@@ -78,7 +78,7 @@ public class MenuFrame extends JFrame {
     }
 
     /**
-     * ƒƒjƒ…[‚ÌƒtƒŒ[ƒ€‚ğ‰Šú‰»‚µ‚Ü‚·D
+     * ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã®ãƒ•ãƒ¬ãƒ¼ãƒ ã‚’åˆæœŸåŒ–ã—ã¾ã™ï¼
      */
     private WindowListener wl = new WindowAdapter() {
         public void windowOpened(WindowEvent ev) {
@@ -88,7 +88,7 @@ public class MenuFrame extends JFrame {
     };
 
     /**
-     * ƒGƒfƒBƒ^‚©‚ç’Ç‰ÁƒLƒƒƒ“ƒZƒ‹Cƒ‚[ƒh•ÏX‚ğóM‚µ‚Ü‚·D
+     * ã‚¨ãƒ‡ã‚£ã‚¿ã‹ã‚‰è¿½åŠ ã‚­ãƒ£ãƒ³ã‚»ãƒ«ï¼Œãƒ¢ãƒ¼ãƒ‰å¤‰æ›´ã‚’å—ä¿¡ã—ã¾ã™ï¼
      */
     private EditorListener el = new EditorListener() {
         public void editorUpdated(EditorEvent ev) {

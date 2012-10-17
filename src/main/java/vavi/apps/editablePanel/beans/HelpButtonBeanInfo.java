@@ -13,7 +13,7 @@ import java.beans.SimpleBeanInfo;
 
 
 /**
- * {@link vavi.apps.editablePanel.beans.HelpButton} ‚Ì BeanInfo ‚Å‚·D
+ * {@link vavi.apps.editablePanel.beans.HelpButton} ã® BeanInfo ã§ã™ï¼
  * 
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 020510 nsano initial version <br>

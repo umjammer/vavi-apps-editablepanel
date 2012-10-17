@@ -21,7 +21,7 @@ import vavi.util.Debug;
 
 
 /**
- * ƒCƒ[ƒW‚ğ•\¦‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg‚Å‚·D
+ * ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã§ã™ï¼
  * 
  * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
  * @version 0.00 010823 nsano initial version <br>
@@ -29,26 +29,26 @@ import vavi.util.Debug;
  */
 public class ImagePanel extends JComponent {
 
-    /** ƒ{[ƒ_[‚Ì• */
+    /** ãƒœãƒ¼ãƒ€ãƒ¼ã®å¹… */
     private static final int BORDER = 5;
 
-    /** ƒCƒ[ƒW */
+    /** ã‚¤ãƒ¡ãƒ¼ã‚¸ */
     private Image image = null;
 
     /**
-     * ƒCƒ[ƒW‚ÌƒpƒX‚ğİ’è‚µ‚Ü‚·D
+     * ã‚¤ãƒ¡ãƒ¼ã‚¸ã®ãƒ‘ã‚¹ã‚’è¨­å®šã—ã¾ã™ï¼
      * 
      * @param imagePath
      */
     public synchronized void setImagePath(String imagePath) {
-        // ƒCƒ[ƒWƒf[ƒ^‚ğ“Ç‚İ‚ñ‚Å•\¦
+        // ã‚¤ãƒ¡ãƒ¼ã‚¸ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚“ã§è¡¨ç¤º
         if ("".equals(imagePath)) {
             Debug.println("blank name");
             setPreferredSize(new Dimension(32 + BORDER, 32 + BORDER));
             return;
         }
 
-        // ƒpƒX–¼‚ª "/" ‚Ån‚Ü‚Á‚Ä‚¢‚È‚¢ê‡‚Í‘Š‘ÎƒpƒX
+        // ãƒ‘ã‚¹åãŒ "/" ã§å§‹ã¾ã£ã¦ã„ãªã„å ´åˆã¯ç›¸å¯¾ãƒ‘ã‚¹
         if (!new File(imagePath).isAbsolute()) {
             imagePath = imagePath + File.separator + imagePath;
             Debug.println("relative path: " + imagePath);
@@ -56,7 +56,7 @@ public class ImagePanel extends JComponent {
             Debug.println("absolute path: " + imagePath);
         }
 
-        // ƒCƒ[ƒW‚ªŠmÀ‚Éƒ[ƒh‚³‚ê‚é‚Ì‚ğ•ÛØ‚·‚é
+        // ã‚¤ãƒ¡ãƒ¼ã‚¸ãŒç¢ºå®Ÿã«ãƒ­ãƒ¼ãƒ‰ã•ã‚Œã‚‹ã®ã‚’ä¿è¨¼ã™ã‚‹
         try {
             MediaTracker tracker = new MediaTracker(this);
             image = Toolkit.getDefaultToolkit().getImage(imagePath);
@@ -70,7 +70,7 @@ public class ImagePanel extends JComponent {
         // Dimension d = getSize();
         // Debug.println(d.width + ", " + d.height);
 
-        // ƒRƒ“ƒ|[ƒlƒ“ƒg‚Ì•‚ğƒCƒ[ƒW‚É‡‚í‚¹‚éB
+        // ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®å¹…ã‚’ã‚¤ãƒ¡ãƒ¼ã‚¸ã«åˆã‚ã›ã‚‹ã€‚
         // int w = Math.max(d.width, image.getWidth(this));
         // int h = Math.max(d.height, image.getHeight(this));
         int w = image.getWidth(this);
@@ -92,7 +92,7 @@ public class ImagePanel extends JComponent {
     }
 
     /**
-     * ƒCƒ[ƒW‚ğ•`‰æ‚µ‚Ü‚·D
+     * ã‚¤ãƒ¡ãƒ¼ã‚¸ã‚’æç”»ã—ã¾ã™ï¼
      */
     public void paint(Graphics g) {
         super.paint(g);
