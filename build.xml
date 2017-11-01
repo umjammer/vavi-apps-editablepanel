@@ -12,34 +12,87 @@
 <!--                                                                        -->
 <!-- ////////////////////////////////////////////////////////////////////// -->
 
-<project default="run" basedir=".">
+<project default="run" basedir="."
+         xmlns:artifact="urn:maven-artifact-ant">
 
-  <!-- クラスパスの定義 -->
-  <path id="project.class.path">
-    <pathelement location="../../.." />
-    <pathelement location="${java.home}/../lib/dt.jar" />
-    <fileset dir="${java.home}/lib/ext/">
-      <include name="*.jar" />
-    </fileset>
-    <fileset dir="../../../../lib">
+  <path id="maven-ant-tasks.classpath">
+    <fileset dir="${user.home}/lib/java/maven-ant-tasks">
       <include name="*.jar" />
     </fileset>
   </path>
+  <typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="urn:maven-artifact-ant"
+           classpathref="maven-ant-tasks.classpath" /> 
 
-  <!-- ターゲットの定義 -->
+  <property environment="env"/>
+  <property file="local.properties" />
+
+  <xmlproperty file="pom.xml" />
+
+  <!-- Path Definitions -->
+  <path id="project.class.path">
+    <fileset refid="maven-ant-tasks.dependency.fileset"/>
+    <pathelement location="${java.home}/../lib/dt.jar" />
+  </path>
 
   <!-- clean -->
-  <target name="clean" description="ビルド環境のクリア">
+  <target name="clean" description="Cleaning">
     <delete>
-      <fileset dir=".">
-        <include name="**/*.class" />
+      <fileset dir="${javac.dest}">
+        <include name="**/*" />
+      </fileset>
+      <fileset dir="${javac.dest.test}">
+        <include name="**/*" />
       </fileset>
     </delete>
   </target>
 
-  <!-- resource -->
-  <target name="resource" description="リソース生成">
-  <echo message="${java.home}" />
+  <!-- prepare -->
+  <target name="prepare" description="Preparing">
+    <artifact:pom file="pom.xml" id="maven.project"/>
+    <artifact:dependencies fileSetId="maven-ant-tasks.dependency.fileset">
+      <pom refid="maven.project"/>
+    </artifact:dependencies>
+  </target>
+
+  <!-- javac -->
+  <target name="compile" depends="prepare,native2ascii" description="Compiling">
+    <javac debug="on" destdir="${javac.dest}"
+           source="${project.build.plugins.plugin.configuration.source}"
+           target="${project.build.plugins.plugin.configuration.target}"
+           encoding="${project.build.plugins.plugin.configuration.encoding}">
+      <classpath refid="project.class.path" />
+      <include name="**/*.java" />
+      <src path="${javac.source}" />
+    </javac>
+
+    <copy todir="${javac.dest}">
+      <fileset dir="${javac.resource}">
+        <include name="**/*" />
+      </fileset>
+    </copy>
+
+    <javac debug="on" destdir="${javac.dest.test}"
+           source="${project.build.plugins.plugin.configuration.source}"
+           target="${project.build.plugins.plugin.configuration.target}"
+           encoding="${project.build.plugins.plugin.configuration.encoding}">
+      <classpath>
+        <path refid="project.class.path" />
+        <pathelement location="${javac.dest}" />
+      </classpath>
+      <include name="**/*.java" />
+      <src path="${javac.source.test}" />
+    </javac>
+
+    <copy todir="${javac.dest.test}">
+      <fileset dir="${javac.resource.test}">
+        <include name="**/*" />
+      </fileset>
+    </copy>
+  </target>
+
+  <!-- native2ascii -->
+  <target name="native2ascii" description="リソース生成">
+    <echo message="${java.home}" />
     <delete file="EditablePanelResource_ja.properties" />
     <exec executable="native2ascii">
       <arg value="-encoding" />
@@ -47,38 +100,6 @@
       <arg value="ja.properties" />
       <arg value="EditablePanelResource_ja.properties" />
     </exec>
-  </target>
-
-  <!-- javac vavi.awt all -->
-  <target name="compile.vavi.awt"
-          description="コンパイル vavi.awt">
-    <ant dir="../../../vavi/awt" target="compile.all" />
-  </target>
-
-  <!-- javac vavi.swing all -->
-  <target name="compile.vavi.swing"
-          description="コンパイル vavi.swing">
-    <ant dir="../../../vavi/swing" target="compile.all" />
-  </target>
-
-  <!-- javac vavi.util -->
-  <target name="compile.vavi.util"
-          description="コンパイル vavi.util">
-    <ant dir="../../../vavi/util" target="compile.all" />
-  </target>
-
-  <!-- javac -->
-  <target name="compile" depends="resource,
-                                  compile.vavi.util,
-                                  compile.vavi.awt,
-                                  compile.vavi.swing"
-    description="コンパイル">
-    <javac debug="on">
-      <classpath refid="project.class.path" />
-      <include name="*.java" />
-      <include name="beans/*.java" />
-      <src path="." />
-    </javac>
   </target>
 
   <!-- run -->
