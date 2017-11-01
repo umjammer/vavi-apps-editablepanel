@@ -28,22 +28,22 @@ import vavi.swing.event.EditorListener;
 /**
  * メニューのフレームです．
  *
- * @editor	receive	cancelToAdd		unselect button
- *		receive	setEditable		set enabled true or false
+ * @editor receive cancelToAdd unselect button
+ *         receive setEditable set enabled true or false
  *
- * @depends	./EditablePanelResource${I18N}.properties
+ * @depends ./EditablePanelResource${I18N}.properties
  *
- * @author	<a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
- * @version	0.00	010823	nsano	initial version <br>
- *		0.01	020503	nsano	refine <br>
+ * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ * @version 0.00 010823 nsano initial version <br>
+ *          0.01 020503 nsano refine <br>
  */
 public class MenuFrame extends JFrame {
 
     /** リソースバンドル */
     private static final ResourceBundle rb =
-	ResourceBundle.getBundle(
-	    "vavi.apps.editablePanel.EditablePanelResource",
-	    Locale.getDefault());
+    ResourceBundle.getBundle(
+        "vavi.apps.editablePanel.EditablePanelResource",
+        Locale.getDefault());
 
     /** beans セレクタ */
     private JBeansTabbedPane palette;
@@ -55,17 +55,17 @@ public class MenuFrame extends JFrame {
      * メニューのフレームを構築します．
      */
     public MenuFrame() {
-	this.setTitle(rb.getString("menuFrame.title"));
-	this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+    this.setTitle(rb.getString("menuFrame.title"));
+    this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.addWindowListener(wl);
-	this.setResizable(false);
+    this.setResizable(false);
 
-	this.getContentPane().setLayout(new BorderLayout());
+    this.getContentPane().setLayout(new BorderLayout());
 
-	// palette
-	palette = new JBeansTabbedPane();
-	JScrollPane sp = new JScrollPane(palette);
-	this.getContentPane().add(sp, BorderLayout.CENTER);
+    // palette
+    palette = new JBeansTabbedPane();
+    JScrollPane sp = new JScrollPane(palette);
+    this.getContentPane().add(sp, BorderLayout.CENTER);
 
         //
         eps.addEventPlug(new EventPlug("csl of editor", palette, null));
