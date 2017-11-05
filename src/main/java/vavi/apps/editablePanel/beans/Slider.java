@@ -188,6 +188,7 @@ public class Slider extends JComponent {
      * スライダーのラベルテーブルを作成します．
      */
     private Hashtable<Integer, JLabel> getLabelTable(int majorSpace) {
+        @SuppressWarnings("unused")
         Hashtable<Integer, JLabel> dic = new Hashtable<Integer, JLabel>();
         if (majorSpace == 0) {
             return dic;

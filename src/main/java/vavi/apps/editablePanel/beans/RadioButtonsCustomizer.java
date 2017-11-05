@@ -40,7 +40,7 @@ public class RadioButtonsCustomizer extends JComponent implements Customizer {
     private JTextField items = new JTextField();
 
     /** ラジオボタンの配置方向のコンボボックス */
-    private JComboBox orientation = new JComboBox();
+    private JComboBox<String> orientation = new JComboBox<>();
 
     /** ラジオボタンのプロパティエディタ */
     public RadioButtonsCustomizer() {

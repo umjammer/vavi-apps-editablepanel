@@ -39,6 +39,7 @@ public class RadioButtons extends JComponent {
     /**
      * ラジオボタングループのコンポーネントを構築します．
      */
+    @SuppressWarnings("unused")
     public RadioButtons() {
         radioButtons = new HashMap<String, JRadioButton>();
 

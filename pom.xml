@@ -11,16 +11,16 @@
   <organization>
     <name></name>
   </organization>
-  <version>1.0.0</version>
-  <url>http://www.vavisoft.com/</url>
+  <version>3.0.0</version>
+  <url>https://github.com/umjammer/vavi-apps-editablePanel</url>
   <description></description>
   <build>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.8</source>
+          <target>1.8</target>
           <encoding>UTF-8</encoding>
         </configuration>
       </plugin>
@@ -33,7 +33,9 @@
               <goal>native2ascii</goal>
             </goals>
             <configuration>
-              <encoding>Windows-31J</encoding>
+              <includes>
+                <include>**/*_ja.properties</include>
+              </includes>
             </configuration>
           </execution>
         </executions>
@@ -70,20 +72,37 @@
     </pluginManagement>
   </build>
   <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+    <repository>
+      <id>java.freehep.org</id>
+      <url>http://java.freehep.org/maven2</url>
+    </repository>
   </repositories>
   <dependencies>
-  	<dependency>
-  		<groupId>junit</groupId>
-  		<artifactId>junit</artifactId>
-  		<version>4.5</version>
-  		<scope>test</scope>
-  		<optional>false</optional>
-  	</dependency>
-  	<dependency>
-  		<groupId>vavi</groupId>
-  		<artifactId>vavi-awt</artifactId>
-  		<version>1.0.0</version>
-  		<optional>false</optional>
-  	</dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.5</version>
+      <scope>test</scope>
+      <optional>false</optional>
+    </dependency>
+    <dependency>
+      <groupId>com.github.umjammer</groupId>
+      <artifactId>vavi-commons</artifactId>
+      <version>1.0.6</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.umjammer</groupId>
+      <artifactId>vavi-awt</artifactId>
+      <version>1.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>javax.jlfgr</groupId>
+      <artifactId>jlfgr</artifactId>
+      <version>1.0</version>
+    </dependency>
   </dependencies>
 </project>

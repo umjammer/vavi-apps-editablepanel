@@ -249,7 +249,7 @@ public class ComponentTreeFrame extends JFrame {
             }
 
             // Debug.println("here");
-            Vector<Component> selection = new Vector<Component>();
+            Vector<Component> selection = new Vector<>();
 
             for (int i = 0; i < selected.length; i++) {
 
@@ -269,7 +269,7 @@ public class ComponentTreeFrame extends JFrame {
      * ツリー上の全パスをモデルの名前をキーに返します．
      */
     private Map<String, TreePath> getAllTreePath() {
-        Map<String, TreePath> allTreePath = new HashMap<String, TreePath>();
+        Map<String, TreePath> allTreePath = new HashMap<>();
         for (int i = 0; i < treeModel.getChildCount(root) + 1; i++) {
             TreePath tp = tree.getPathForRow(i);
             allTreePath.put(tp.getLastPathComponent().toString(), tp);
@@ -391,7 +391,7 @@ public class ComponentTreeFrame extends JFrame {
         public void editorUpdated(EditorEvent ev) {
             String name = ev.getName();
             if ("select".equals(name)) {
-                List<Component> selected = (List) ev.getArgument();
+                List<Component> selected = (List<Component>) ev.getArgument();
                 selectView(selected);
             } else if ("add".equals(name)) {
                 Component component = (Component) ev.getArgument();

@@ -7,8 +7,8 @@
 <!--                                                                        -->
 <!-- vavi.apps.editablePanel                                                -->
 <!--                                                                        -->
-<!-- @author	Naohide Sano                                                -->
-<!-- @version	0.00	020522	nsano	initial version                     -->
+<!-- @author Naohide Sano                                                   -->
+<!-- @version 0.00 020522 nsano initial version                             -->
 <!--                                                                        -->
 <!-- ////////////////////////////////////////////////////////////////////// -->
 
@@ -30,21 +30,10 @@
 
   <!-- Path Definitions -->
   <path id="project.class.path">
+    <pathelement location="${javac.dest.test}" />
+    <pathelement location="${javac.dest}" />
     <fileset refid="maven-ant-tasks.dependency.fileset"/>
-    <pathelement location="${java.home}/../lib/dt.jar" />
   </path>
-
-  <!-- clean -->
-  <target name="clean" description="Cleaning">
-    <delete>
-      <fileset dir="${javac.dest}">
-        <include name="**/*" />
-      </fileset>
-      <fileset dir="${javac.dest.test}">
-        <include name="**/*" />
-      </fileset>
-    </delete>
-  </target>
 
   <!-- prepare -->
   <target name="prepare" description="Preparing">
@@ -52,66 +41,23 @@
     <artifact:dependencies fileSetId="maven-ant-tasks.dependency.fileset">
       <pom refid="maven.project"/>
     </artifact:dependencies>
-  </target>
-
-  <!-- javac -->
-  <target name="compile" depends="prepare,native2ascii" description="Compiling">
-    <javac debug="on" destdir="${javac.dest}"
-           source="${project.build.plugins.plugin.configuration.source}"
-           target="${project.build.plugins.plugin.configuration.target}"
-           encoding="${project.build.plugins.plugin.configuration.encoding}">
-      <classpath refid="project.class.path" />
-      <include name="**/*.java" />
-      <src path="${javac.source}" />
-    </javac>
-
-    <copy todir="${javac.dest}">
-      <fileset dir="${javac.resource}">
-        <include name="**/*" />
-      </fileset>
-    </copy>
-
-    <javac debug="on" destdir="${javac.dest.test}"
-           source="${project.build.plugins.plugin.configuration.source}"
-           target="${project.build.plugins.plugin.configuration.target}"
-           encoding="${project.build.plugins.plugin.configuration.encoding}">
-      <classpath>
-        <path refid="project.class.path" />
-        <pathelement location="${javac.dest}" />
-      </classpath>
-      <include name="**/*.java" />
-      <src path="${javac.source.test}" />
-    </javac>
-
-    <copy todir="${javac.dest.test}">
-      <fileset dir="${javac.resource.test}">
-        <include name="**/*" />
-      </fileset>
-    </copy>
-  </target>
-
-  <!-- native2ascii -->
-  <target name="native2ascii" description="リソース生成">
-    <echo message="${java.home}" />
-    <delete file="EditablePanelResource_ja.properties" />
-    <exec executable="native2ascii">
-      <arg value="-encoding" />
-      <arg value="SJIS" />
-      <arg value="ja.properties" />
-      <arg value="EditablePanelResource_ja.properties" />
-    </exec>
+    <artifact:mvn pom="pom.xml">
+      <arg value="clean"/>
+      <arg value="package"/>
+      <arg value="-Dmaven.test.skip=true"/>
+    </artifact:mvn>
   </target>
 
   <!-- run -->
-  <target name="run" depends="compile" description="Executes the Program">
+  <target name="run" depends="prepare" description="Executes the Program">
     <java classname="vavi.apps.editablePanel.EditablePanel" fork="yes">
-      <jvmarg value="-Duser.home=c:/home/nsano" />
+      <jvmarg value="-Duser.home=${user.home}" />
       <classpath refid="project.class.path"/>
     </java>
   </target>
 
   <!-- ctf -->
-  <target name="ctf" depends="compile" description="Test component tree frame">
+  <target name="ctf" depends="prepare" description="Test component tree frame">
     <java classname="vavi.apps.editablePanel.ComponentTreeFrame" fork="yes">
       <classpath refid="project.class.path"/>
     </java>

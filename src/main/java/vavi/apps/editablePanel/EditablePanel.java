@@ -286,6 +286,7 @@ Debug.println(Level.SEVERE, e);
      * 
      * @see #preparedComponent
      */
+    @SuppressWarnings("unused")
     private synchronized void cancelToAdd() {
         if (preparedComponent != null) {
             preparedComponent = null;
@@ -298,7 +299,7 @@ Debug.println(Level.SEVERE, e);
      * ユニークな名前を返します．
      */
     private String getNewName(String baseName) {
-        List<String> names = new ArrayList<String>();
+        List<String> names = new ArrayList<>();
         for (int i = 0; i < container.getComponents().length; i++) {
             Component component = container.getComponent(i);
             names.add(component.getName());
@@ -718,7 +719,9 @@ Debug.println("save: " + file);
     /** 終了するアクション */
     private Action exitAction = new AbstractAction(rb.getString("action.exit")) {
         public void actionPerformed(ActionEvent ev) {
-            close();
+            SwingUtilities.invokeLater(() -> {
+                close();
+            });
             System.exit(0);
         }
     };
@@ -957,6 +960,7 @@ Debug.println("save: " + file);
                 key = "ep.action." + i + ".icon";
                 String icon = props.getProperty(key);
 
+Debug.println("icon: " + icon);
                 table.put(val, new ImageIcon(t.getImage(c.getResource(icon))));
 
                 i++;
@@ -982,6 +986,7 @@ Debug.println("save: " + file);
             this.bean = bean;
         }
 
+        @SuppressWarnings("unused")
         public Object getBean() {
             return bean;
         }
