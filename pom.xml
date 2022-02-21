@@ -52,14 +52,17 @@
       <url>http://java.freehep.org/maven2</url>
     </repository>
   </repositories>
+  <dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.13.1</version>
-      <scope>test</scope>
-      <optional>false</optional>
+        <groupId>org.junit</groupId>
+        <artifactId>junit-bom</artifactId>
+        <version>5.8.1</version>
+        <type>pom</type>
+        <scope>import</scope>
     </dependency>
+    </dependencies>
+  </dependencyManagement>
     <dependency>
       <groupId>com.github.umjammer</groupId>
       <artifactId>vavi-commons</artifactId>
@@ -74,6 +77,20 @@
       <groupId>javax.jlfgr</groupId>
       <artifactId>jlfgr</artifactId>
       <version>1.0</version>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter-engine</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.junit.platform</groupId>
+      <artifactId>junit-platform-commons</artifactId>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 </project>
