@@ -30,11 +30,11 @@
         <executions>
           <execution>
             <goals>
-              <goal>native2ascii</goal>
+              <goal>resources</goal>
             </goals>
             <configuration>
               <includes>
-                <include>**/*_ja.properties</include>
+                <include>**/*_ja_JP.properties</include>
               </includes>
             </configuration>
           </execution>
