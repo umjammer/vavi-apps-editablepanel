@@ -76,7 +76,7 @@ import vavi.util.RegexFileFilter;
 
 /**
  * のメインモジュールです．
- * 
+ *
  * @depends ${JDK_HOME}/lib/dt.jar
  * @depends ./EditablePanelResource${I18N}.properties
  * 
@@ -960,7 +960,7 @@ Debug.println("save: " + file);
                 key = "ep.action." + i + ".icon";
                 String icon = props.getProperty(key);
 
-Debug.println("icon: " + icon);
+Debug.println(Level.FINE, "icon: " + icon);
                 table.put(val, new ImageIcon(t.getImage(c.getResource(icon))));
 
                 i++;
@@ -968,9 +968,8 @@ Debug.println("icon: " + icon);
 
             path = "/toolbarButtonGraphics/development/Bean24.gif";
             table.put("ep.beanWrapperIcon", t.getImage(c.getResource(path)));
-        } catch (Exception e) {
-            Debug.printStackTrace(e);
-            System.exit(1);
+        } catch (IOException e) {
+            throw new IllegalStateException(e);
         }
     }
 
