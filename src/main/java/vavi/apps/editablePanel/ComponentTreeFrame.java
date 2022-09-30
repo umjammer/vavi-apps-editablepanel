@@ -176,8 +176,8 @@ public class ComponentTreeFrame extends JFrame {
             if (selected == null)
                 return;
 
-            for (int i = 0; i < selected.length; i++) {
-                ComponentTreeNode node = (ComponentTreeNode) selected[i].getLastPathComponent();
+            for (TreePath treePath : selected) {
+                ComponentTreeNode node = (ComponentTreeNode) treePath.getLastPathComponent();
                 Component c = (Component) node.getUserObject();
                 fireEditorUpdated(new EditorEvent(this, "show", c));
             }
@@ -194,8 +194,8 @@ public class ComponentTreeFrame extends JFrame {
                 return;
             }
 
-            for (int i = 0; i < selected.length; i++) {
-                ComponentTreeNode node = (ComponentTreeNode) selected[i].getLastPathComponent();
+            for (TreePath treePath : selected) {
+                ComponentTreeNode node = (ComponentTreeNode) treePath.getLastPathComponent();
                 Component c = (Component) node.getUserObject();
                 fireEditorUpdated(new EditorEvent(this, "hide", c));
             }
@@ -213,8 +213,8 @@ public class ComponentTreeFrame extends JFrame {
         TreePath[] selected = tree.getSelectionPaths();
 
         if (selected != null) {
-            for (int i = 0; i < selected.length; i++) {
-                ComponentTreeNode node = (ComponentTreeNode) selected[i].getLastPathComponent();
+            for (TreePath treePath : selected) {
+                ComponentTreeNode node = (ComponentTreeNode) treePath.getLastPathComponent();
                 Component component = (Component) node.getUserObject();
                 if (component != container) {
                     if (component.isVisible()) {
@@ -251,9 +251,9 @@ public class ComponentTreeFrame extends JFrame {
             // Debug.println("here");
             Vector<Component> selection = new Vector<>();
 
-            for (int i = 0; i < selected.length; i++) {
+            for (TreePath treePath : selected) {
 
-                ComponentTreeNode node = (ComponentTreeNode) selected[i].getLastPathComponent();
+                ComponentTreeNode node = (ComponentTreeNode) treePath.getLastPathComponent();
                 Component component = (Component) node.getUserObject();
                 selection.addElement(component);
                 // Debug.println(component.getName());
@@ -335,8 +335,8 @@ public class ComponentTreeFrame extends JFrame {
         if (selected.size() > 0) {
             Map<String, TreePath> allTreePath = getAllTreePath();
 
-            for (int i = 0; i < selected.size(); i++) {
-                String name = selected.get(i).getName();
+            for (Component component : selected) {
+                String name = component.getName();
                 TreePath tp = allTreePath.get(name);
                 tree.getSelectionModel().addSelectionPath(tp);
             }
@@ -355,7 +355,7 @@ public class ComponentTreeFrame extends JFrame {
             String name = ev.getName();
 //Debug.println(Debug.SPECIAL, name + ": " + Debug.getTopCallerMethod("vavi"));
             if ("setEditable".equals(name)) {
-                if (((Boolean) ev.getArgument()).booleanValue()) {
+                if ((Boolean) ev.getArgument()) {
                     plug();
                     pack();
                     setVisible(true);
@@ -386,20 +386,17 @@ public class ComponentTreeFrame extends JFrame {
     /**
      * < {select,add,remove}@editor
      */
-    private EditorListener el2 = new EditorListener() {
-        @SuppressWarnings("unchecked")
-        public void editorUpdated(EditorEvent ev) {
-            String name = ev.getName();
-            if ("select".equals(name)) {
-                List<Component> selected = (List<Component>) ev.getArgument();
-                selectView(selected);
-            } else if ("add".equals(name)) {
-                Component component = (Component) ev.getArgument();
-                addView(component);
-            } else if ("remove".equals(name)) {
-                Component component = (Component) ev.getArgument();
-                deleteView(component);
-            }
+    private EditorListener el2 = ev -> {
+        String name = ev.getName();
+        if ("select".equals(name)) {
+            List<Component> selected = (List<Component>) ev.getArgument();
+            selectView(selected);
+        } else if ("add".equals(name)) {
+            Component component = (Component) ev.getArgument();
+            addView(component);
+        } else if ("remove".equals(name)) {
+            Component component = (Component) ev.getArgument();
+            deleteView(component);
         }
     };
 

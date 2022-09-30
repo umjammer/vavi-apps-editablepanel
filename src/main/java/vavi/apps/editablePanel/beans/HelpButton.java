@@ -6,8 +6,10 @@
 
 package vavi.apps.editablePanel.beans;
 
+import java.awt.Desktop;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URI;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -50,7 +52,7 @@ public class HelpButton extends JButton {
 
         public void actionPerformed(ActionEvent ev) {
             try {
-                Runtime.getRuntime().exec(browserPath + " " + url);
+                Desktop.getDesktop().browse(URI.create(url));
             } catch (Exception e) {
                 Debug.println(Level.SEVERE, "browser run error: " + e);
             }

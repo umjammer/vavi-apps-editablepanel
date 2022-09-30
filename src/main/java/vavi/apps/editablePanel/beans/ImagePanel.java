@@ -42,8 +42,8 @@ public class ImagePanel extends JComponent {
      */
     public synchronized void setImagePath(String imagePath) {
         // イメージデータを読み込んで表示
-        if ("".equals(imagePath)) {
-            Debug.println("blank name");
+        if (imagePath.isEmpty()) {
+Debug.println("blank name");
             setPreferredSize(new Dimension(32 + BORDER, 32 + BORDER));
             return;
         }
@@ -51,9 +51,9 @@ public class ImagePanel extends JComponent {
         // パス名が "/" で始まっていない場合は相対パス
         if (!new File(imagePath).isAbsolute()) {
             imagePath = imagePath + File.separator + imagePath;
-            Debug.println("relative path: " + imagePath);
+Debug.println("relative path: " + imagePath);
         } else {
-            Debug.println("absolute path: " + imagePath);
+Debug.println("absolute path: " + imagePath);
         }
 
         // イメージが確実にロードされるのを保証する
@@ -63,8 +63,7 @@ public class ImagePanel extends JComponent {
             tracker.addImage(image, 0);
             tracker.waitForAll();
         } catch (InterruptedException e) {
-            Debug.println(Level.SEVERE, e);
-            image = null;
+            throw new IllegalArgumentException(imagePath);
         }
 
         // Dimension d = getSize();

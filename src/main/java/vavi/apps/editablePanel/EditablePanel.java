@@ -121,7 +121,7 @@ public class EditablePanel extends JComponent {
         container.setBackground(Color.white);
 
         // self
-        ((JComponent) container).setPreferredSize(container.getSize());
+        container.setPreferredSize(container.getSize());
         this.setLayout(new BorderLayout());
         this.add(container, BorderLayout.CENTER);
         this.addEditorListener(el); // < sel,file,setEd
