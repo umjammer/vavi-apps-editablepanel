@@ -5,19 +5,56 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>vavi</groupId>
   <artifactId>vavi-apps-editablePanel</artifactId>
+  <version>3.0.1-SNAPSHOT</version>
+
   <name>Vavi Editable Panel Application</name>
   <organization>
-    <name></name>
+    <name>vavi</name>
   </organization>
-  <version>3.0.0</version>
   <url>https://github.com/umjammer/vavi-apps-editablePanel</url>
-  <description></description>
+  <description>swing application</description>
+
+  <profiles>
+    <profile>
+      <!-- mvn -P exec antrun:run -Dinfile='file' -->
+      <id>exec</id>
+      <build>
+        <plugins>
+          <plugin>
+            <!-- GOOD: fork: OK, test jars: OK, user args, default args: OK -->
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>3.1.0</version>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <target>
+                <java classname="vavi.apps.editablePanel.EditablePanel" fork="true">
+                  <classpath>
+                    <path refid="maven.compile.classpath"/>
+                    <path refid="maven.test.classpath"/>
+                  </classpath>
+                  <jvmarg value="-Djava.util.logging.config.file=${project.build.testOutputDirectory}/logging.properties" />
+                  <jvmarg value="-Dswing.defaultlaf=com.formdev.flatlaf.FlatLightLaf" />
+                </java>
+              </target>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+
   <build>
     <plugins>
       <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.10.1</version>
         <configuration>
           <source>1.8</source>
           <target>1.8</target>
@@ -27,6 +64,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>native2ascii-maven-plugin</artifactId>
+        <version>2.0.1</version>
         <executions>
           <execution>
             <goals>
@@ -42,41 +80,48 @@
       </plugin>
     </plugins>
   </build>
+
   <repositories>
     <repository>
       <id>jitpack.io</id>
       <url>https://jitpack.io</url>
     </repository>
-    <repository>
-      <id>java.freehep.org</id>
-      <url>http://java.freehep.org/maven2</url>
-    </repository>
   </repositories>
+
   <dependencyManagement>
-  <dependencies>
-    <dependency>
+    <dependencies>
+      <dependency>
         <groupId>org.junit</groupId>
         <artifactId>junit-bom</artifactId>
-        <version>5.8.1</version>
+        <version>5.8.2</version>
         <type>pom</type>
         <scope>import</scope>
-    </dependency>
+      </dependency>
     </dependencies>
   </dependencyManagement>
+
+  <dependencies>
     <dependency>
       <groupId>com.github.umjammer</groupId>
       <artifactId>vavi-commons</artifactId>
-      <version>1.0.6</version>
+      <version>1.1.6</version>
     </dependency>
     <dependency>
-      <groupId>com.github.umjammer</groupId>
+      <groupId>vavi</groupId> <!-- com.github.umjammer -->
       <artifactId>vavi-awt</artifactId>
-      <version>1.0.1</version>
+      <version>1.0.6-SNAPSHOT</version>
     </dependency>
     <dependency>
-      <groupId>javax.jlfgr</groupId>
+      <groupId>net.java.linoleum</groupId>
       <artifactId>jlfgr</artifactId>
-      <version>1.0</version>
+      <version>1_0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.formdev</groupId>
+      <artifactId>flatlaf</artifactId>
+      <version>1.6.1</version>
+    </dependency>
+
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
