@@ -896,7 +896,7 @@ Debug.println("save: " + file);
     private Action showManualAction = new AbstractAction(rb.getString("action.showManual"), (ImageIcon) UIManager.get("editablePanel.showManualIcon")) {
         public void actionPerformed(ActionEvent ev) {
             try {
-                Runtime.getRuntime().exec(props.getProperty("ep.path.browser") + " " + props.getProperty("ep.url.manual"));
+                Runtime.getRuntime().exec(new String[] {props.getProperty("ep.path.browser"), props.getProperty("ep.url.manual")});
             } catch (Exception e) {
                 Debug.println(Level.SEVERE, "Cannot show the manual: " + e);
             }
