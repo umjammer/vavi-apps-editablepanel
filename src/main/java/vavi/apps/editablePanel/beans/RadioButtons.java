@@ -85,13 +85,13 @@ public class RadioButtons extends JComponent {
 
         ButtonGroup group = new ButtonGroup();
 
-        for (int i = 0; i < items.length; i++) {
+        for (String item : items) {
             JRadioButton button = new JRadioButton();
             button.setEnabled(isEnabled());
-            button.setText(items[i]);
+            button.setText(item);
             group.add(button);
             this.add(button);
-            radioButtons.put(items[i], button);
+            radioButtons.put(item, button);
         }
 
         this.validate();
@@ -134,9 +134,7 @@ public class RadioButtons extends JComponent {
      * 選択されたラジオボタンのテキストを取得します．
      */
     public String getSelectedItem() {
-        Iterator<JRadioButton> e = radioButtons.values().iterator();
-        while (e.hasNext()) {
-            JRadioButton radioButton = e.next();
+        for (JRadioButton radioButton : radioButtons.values()) {
             if (radioButton.isSelected()) {
                 return radioButton.getText();
             }
@@ -151,9 +149,8 @@ public class RadioButtons extends JComponent {
      */
     public void setEnabled(boolean isEnabled) {
         super.setEnabled(isEnabled);
-        Iterator<JRadioButton> e = radioButtons.values().iterator();
-        while (e.hasNext()) {
-            e.next().setEnabled(isEnabled);
+        for (JRadioButton jRadioButton : radioButtons.values()) {
+            jRadioButton.setEnabled(isEnabled);
         }
     }
 
@@ -164,9 +161,8 @@ public class RadioButtons extends JComponent {
      */
     public synchronized void addMouseListener(MouseListener l) {
         super.addMouseListener(l);
-        Iterator<JRadioButton> e = radioButtons.values().iterator();
-        while (e.hasNext()) {
-            e.next().addMouseListener(l);
+        for (JRadioButton jRadioButton : radioButtons.values()) {
+            jRadioButton.addMouseListener(l);
         }
     }
 
@@ -177,9 +173,8 @@ public class RadioButtons extends JComponent {
      */
     public synchronized void addMouseMotionListener(MouseMotionListener l) {
         super.addMouseMotionListener(l);
-        Iterator<JRadioButton> e = radioButtons.values().iterator();
-        while (e.hasNext()) {
-            e.next().addMouseMotionListener(l);
+        for (JRadioButton jRadioButton : radioButtons.values()) {
+            jRadioButton.addMouseMotionListener(l);
         }
     }
 
@@ -190,9 +185,8 @@ public class RadioButtons extends JComponent {
      */
     public synchronized void removeMouseListener(MouseListener l) {
         super.removeMouseListener(l);
-        Iterator<JRadioButton> e = radioButtons.values().iterator();
-        while (e.hasNext()) {
-            e.next().removeMouseListener(l);
+        for (JRadioButton jRadioButton : radioButtons.values()) {
+            jRadioButton.removeMouseListener(l);
         }
     }
 
@@ -203,9 +197,8 @@ public class RadioButtons extends JComponent {
      */
     public synchronized void removeMouseMotionListener(MouseMotionListener l) {
         super.removeMouseMotionListener(l);
-        Iterator<JRadioButton> e = radioButtons.values().iterator();
-        while (e.hasNext()) {
-            e.next().removeMouseMotionListener(l);
+        for (JRadioButton jRadioButton : radioButtons.values()) {
+            jRadioButton.removeMouseMotionListener(l);
         }
     }
 }

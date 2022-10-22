@@ -91,16 +91,12 @@ public class Slider extends JComponent {
     }
 
     /** */
-    private ChangeListener changeListener = new ChangeListener() {
-        public void stateChanged(ChangeEvent ev) {
-            setLabelText();
-        }
-    };
+    private ChangeListener changeListener = ev -> setLabelText();
 
     /** */
     private ActionListener actionListener = new ActionListener() {
         public void actionPerformed(ActionEvent ev) {
-            setValue(new Double(label.getText()).doubleValue());
+            setValue(new Double(label.getText()));
             setLabelText();
         }
     };
@@ -159,7 +155,7 @@ public class Slider extends JComponent {
      * スライダーの値を取得します．
      */
     public double getValue() {
-        return new Double(label.getText()).doubleValue();
+        return new Double(label.getText());
     }
 
     /**
@@ -171,7 +167,7 @@ public class Slider extends JComponent {
         this.dividingCount = dividingCount;
 
         int dif = slider.getMaximum() - slider.getMinimum();
-        double majorTick = dif / dividingCount;
+        double majorTick = (double) dif / dividingCount;
         slider.setMajorTickSpacing(new Double(majorTick).intValue());
         Hashtable<Integer, JLabel> dic = getLabelTable(slider.getMajorTickSpacing());
         slider.setLabelTable(dic);
@@ -201,7 +197,7 @@ public class Slider extends JComponent {
             }
             double dKey = getValidatedDouble(intKey);
             String key = getDoubleString(dKey);
-            dic.put(new Integer(intKey), new JLabel(key));
+            dic.put(intKey, new JLabel(key));
             cnt++;
         }
 
